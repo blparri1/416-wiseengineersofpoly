@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<table width="1366x" cellpadding="0" border="0" align="center"> <!-- Per Google, 1366px is the current standard -->
+<table class="center" align="center" id="coreTable"> <!-- Per Google, 1366px is the current standard -->
     <!-- Colors are temp to show the diffrent areas -->
     <tr id="topRow">
         <td id="topCell" bgcolor="blue">
@@ -17,8 +18,8 @@
             Menu Row - All the main menu buttons go there (including login/register)  Once logged in, get a Dashboard that replaces Login
         </td>
     </tr>
-    <tr id="mainRow">
-        <td id="main" bgcolor="#f0f8ff">
+    <tr id="mainRow" class="background"> <!-- min height is set to 600 - table should stretch to fill in any additional images -->
+        <td id="main">
             Main Content - What we modify for each "page"
         </td>
     </tr>
@@ -28,7 +29,6 @@
         </td>
     </tr>
 </table>
-<div id="app"></div>
 <!--<script src="stuff.js"></script> -->
 </body>
 </html>
