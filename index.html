@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <table class="center" align="center" id="coreTable"> <!-- Per Google, 1366px is the current standard -->
     <!-- Colors are temp to show the diffrent areas -->
     <tr id="topRow">
-        <td id="topCell" bgcolor="blue">
+        <td id="topCell" bgcolor="blue" class="alignTop">
             TopBanner - Logo/Slogan goes here
         </td>
     </tr>
     <tr id="menuRow" bgcolor="#a0522d">
-        <td>
+        <td class="alignTop">
             Menu Row - All the main menu buttons go there (including login/register)  Once logged in, get a Dashboard that replaces Login
         </td>
     </tr>
-    <tr id="mainRow" class="background"> <!-- min height is set to 600 - table should stretch to fill in any additional images -->
-        <td id="main">
-            Main Content - What we modify for each "page"
+    <tr id="mainRow" class="mainBackground"> <!-- min height is set to 600 - table should stretch to fill in any additional images -->
+        <td id="main" class="alignTop">
+            <div class="transbox" id="content">
+                Main Content - What we modify for each "page"
+            </div>
         </td>
     </tr>
     <tr id="bottomBar">

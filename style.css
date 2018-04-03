@@ -17,8 +17,20 @@ table.center {
     margin-right:auto;
 }
 
-table.background {
+tr.mainBackground {
     background: url("images/mainBackground.jpg") no-repeat;
+}
+
+td.alignTop{
+    vertical-align:top;
+}
+
+div.transbox {
+    margin: 5px;
+    background-color: #ffffff;
+    border: 0px;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 #topRow {
