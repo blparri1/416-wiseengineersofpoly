@@ -3,29 +3,55 @@
 <head>
     <meta charset="utf-8">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<table width="1366x" cellpadding="0" border="0" align="center"> <!-- Per Google, 1366px is the current standard -->
+<table class="center" align="center" id="coreTable"> <!-- Per Google, 1366px is the current standard -->
+    <!-- Colors are temp to show the diffrent areas -->
     <tr id="topRow">
-        <td id="topCell" colspan="2" bgcolor="blue">
-            TopBanner
+        <td id="topCell" bgcolor="#686a69" class="alignTop">
+            TopBanner - Logo/Slogan goes here
         </td>
     </tr>
-    <tr id="mainRow">
-        <td id="sideMenu" bgcolor="#a52a2a" width="150px">
-            Side Menu
+    <tr id="menuRow" bgcolor="#7a1317">
+        <td class="alignTop">
+            Menu Row - All the main menu buttons go there (including login/register)  Once logged in, get a Dashboard that replaces Login
         </td>
-        <td id="main" bgcolor="#f0f8ff">
-            Main Content
+    </tr>
+    <tr id="mainRow" class="mainBackground"> <!-- min height is set to 600 - table should stretch to fill in any additional images -->
+        <td id="main" class="alignTop">
+            <!-- Scott -->
+            <div id="equipment" class="transbox"></div>
+            Testing
+            <div id="register" class="transbox"></div>
+            <!-- Ali -->
+            <div id="events" class="transbox"></div>
+            <div id="donations" class="transbox"></div>
+            <div id="shoppingCart" class="transbox"></div>
+            <!-- Chris -->
+            <div id="catering" class="transbox"></div>
+            <div id="shuttles" class="transbox"></div>
+            <!-- Kaelen -->
+            <div id="landing" class="transbox"></div>
+            <div id="checkOut" class="transbox"></div>
+            <!-- Bryan gots login-->
+            <div id="login" class="transbox"></div>
+            <div id="emDashboard" class="transbox"></div>
+            <div id="volDashboard" class="transbox"></div>
+            <div id="userDashboard" class="transbox"></div>
         </td>
     </tr>
     <tr id="bottomBar">
-        <td colspan="2" bgcolor="#8a2be2">
-            Bottom Bar
+        <td bgcolor="#f2bb26">
+            Bottom Bar - the Basic "Contact Us" and licensing info at the bottom of most pages
         </td>
     </tr>
 </table>
-<div id="app"></div>
 <!--<script src="stuff.js"></script> -->
 </body>
 </html>
+
+<!--
+
+
+-->

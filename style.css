@@ -1,0 +1,51 @@
+html, body, #page {
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+tr.mainBackground {
+    background: url("images/mainBackground.jpg") no-repeat;
+}
+
+td.alignTop{
+    vertical-align:top;
+}
+
+div.transbox {
+    margin: 10px;
+    background-color: #ffffff;
+    border: 0px;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+#coreTable {
+    margin:auto;
+    padding:0;
+    border:0;
+    width:1366px;
+    border-collapse: collapse;
+}
+
+#topRow {
+    height:100px;
+}
+
+#menuRow {
+    height:35px;
+    color:white;
+}
+
+#mainRow{
+    height:600px;
+}
+
+#bottomBar {
+    height:25px;
+}
