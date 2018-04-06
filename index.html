@@ -4,49 +4,196 @@
     <meta charset="utf-8">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- BOOTSTRAP CSS CDN -->
+    <link rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous">
+    <!-- BOOTSTRAP JS, Popper.JS, jQuery; ALL USED BY BOOTSTRAP 4 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<table class="center" align="center" id="coreTable"> <!-- Per Google, 1366px is the current standard -->
     <!-- Colors are temp to show the diffrent areas -->
-    <tr id="topRow">
-        <td id="topCell" bgcolor="#686a69" class="alignTop">
-            TopBanner - Logo/Slogan goes here
-        </td>
-    </tr>
-    <tr id="menuRow" bgcolor="#7a1317">
-        <td class="alignTop">
-            Menu Row - All the main menu buttons go there (including login/register)  Once logged in, get a Dashboard that replaces Login
-        </td>
-    </tr>
-    <tr id="mainRow" class="mainBackground"> <!-- min height is set to 600 - table should stretch to fill in any additional images -->
-        <td id="main" class="alignTop">
+    <div class="container-fluid">
+        
+        <div class="row"
+            style="background-color: #686a69;">
+            <h1 class="display-4">
+                TopBanner - Logo/Slogan goes here
+            </h1>
+        </div>
+
+        <div class="row" 
+            style="background-color: #7a1317;">            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <div class="btn-group" role="group">
+
+                    <!-- Small button groups (default and split) -->
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" 
+                                type="button" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">
+                        Account
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Login</a>
+                            <a class="dropdown-item" href="#">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" 
+                    id="equipment-tab" 
+                    data-toggle="tab" 
+                    href="#equipment" 
+                    role="tab" 
+                    aria-controls="equipment" 
+                    aria-selected="true">
+                    Equipment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                    id="events-tab" 
+                    data-toggle="tab" 
+                    href="#events" 
+                    role="tab" 
+                    aria-controls="events" 
+                    aria-selected="false">
+                    Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                    id="donations-tab" 
+                    data-toggle="tab" 
+                    href="#donations" 
+                    role="tab" 
+                    aria-controls="donations" 
+                    aria-selected="false">
+                    Donations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                    id="shoppingCart-tab" 
+                    data-toggle="tab" 
+                    href="#shoppingCart" 
+                    role="tab" 
+                    aria-controls="shoppingCart" 
+                    aria-selected="false">
+                    Shopping Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                    id="shuttles-tab" 
+                    data-toggle="tab" 
+                    href="#shuttles" 
+                    role="tab" 
+                    aria-controls="shuttles" 
+                    aria-selected="false">
+                    Shuttles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                    id="landing-tab" 
+                    data-toggle="tab" 
+                    href="#landing" 
+                    role="tab" 
+                    aria-controls="landing" 
+                    aria-selected="false">
+                    Landing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                    id="checkout-tab" 
+                    data-toggle="tab" 
+                    href="#checkout" 
+                    role="tab" 
+                    aria-controls="checkout" 
+                    aria-selected="false">
+                    Checkout</a>
+            </li>
+
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="equipment-tab">
+                Equipment
+            </div>
+            <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                Events
+            </div>
+            <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="donations-tab">
+                Donations
+            </div>
+            <div class="tab-pane fade" id="shoppingCart" role="tabpanel" aria-labelledby="shoppingCart-tab">
+                Shopping Cart
+            </div>
+            <div class="tab-pane fade" id="shuttles" role="tabpanel" aria-labelledby="shuttles-tab">
+                Shuttles
+            </div>
+            <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
+                Landing
+            </div>
+            <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
+                Checkout
+            </div>
+          </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            
             <!-- Scott -->
-            <div id="equipment" class="transbox"></div>
+            <!-- <div id="equipment" class="transbox"></div>
             Testing
-            <div id="register" class="transbox"></div>
+            <div id="register" class="transbox"></div> -->
             <!-- Ali -->
-            <div id="events" class="transbox"></div>
+            <div id="events" class="transbox">
+                Testing
+            </div>
             <div id="donations" class="transbox"></div>
             <div id="shoppingCart" class="transbox"></div>
             <!-- Chris -->
-            <div id="catering" class="transbox"></div>
-            <div id="shuttles" class="transbox"></div>
+            <!-- <div id="catering" class="transbox"></div>
+            <div id="shuttles" class="transbox"></div> -->
             <!-- Kaelen -->
-            <div id="landing" class="transbox"></div>
-            <div id="checkOut" class="transbox"></div>
+            <!-- <div id="landing" class="transbox"></div>
+            <div id="checkOut" class="transbox"></div> -->
             <!-- Bryan gots login-->
-            <div id="login" class="transbox"></div>
+            <!-- <div id="login" class="transbox"></div>
             <div id="emDashboard" class="transbox"></div>
             <div id="volDashboard" class="transbox"></div>
-            <div id="userDashboard" class="transbox"></div>
-        </td>
-    </tr>
+            <div id="userDashboard" class="transbox"></div> -->
+        </div>
+    </div>
+
     <tr id="bottomBar">
         <td bgcolor="#f2bb26">
             Bottom Bar - the Basic "Contact Us" and licensing info at the bottom of most pages
         </td>
     </tr>
-</table>
 <!--<script src="stuff.js"></script> -->
 </body>
 </html>
