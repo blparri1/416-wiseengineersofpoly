@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
-    <link rel="stylesheet" type="text/css" href="style.css">
     <!-- BOOTSTRAP CSS CDN -->
     <link rel="stylesheet" 
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
             crossorigin="anonymous">
     <!-- BOOTSTRAP JS, Popper.JS, jQuery; ALL USED BY BOOTSTRAP 4 -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
@@ -19,67 +20,66 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous"></script>
+    <!-- Full Calendar Bootstrap API -->
+    <link href='css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <script src='lib/moment.min.js'></script>
+    <script src='lib/jquery.min.js'></script>
+    <script src='js/fullcalendar.min.js'></script>
+    <!-- Custom scripts -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
 </head>
 <body>
-    <!-- Colors are temp to show the diffrent areas -->
+    <!-- Bryan gots login-->
+            <!-- <div id="login" class="transbox"></div>
+            <div id="emDashboard" class="transbox"></div>
+            <div id="volDashboard" class="transbox"></div>
+            <div id="userDashboard" class="transbox"></div> -->
+
+    <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
     <div class="container-fluid">
-        
         <div class="row"
-            style="background-color: #686a69;">
-            <h1 class="display-4">
-                TopBanner - Logo/Slogan goes here
-            </h1>
+            style="background-color: #858786;">
+                <h1 class="display-4" 
+                style="font-family: 'Hi Melody', cursive; 
+                        padding-left: 2%;">
+                Best Community Service</h1> 
         </div>
-
-        <div class="row" 
-            style="background-color: #7a1317;">            
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <div class="btn-group" role="group">
-
-                    <!-- Small button groups (default and split) -->
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-sm dropdown-toggle" 
-                                type="button" 
-                                data-toggle="dropdown" 
-                                aria-haspopup="true" 
-                                aria-expanded="false">
-                        Account
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Login</a>
-                            <a class="dropdown-item" href="#">Register</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-        </div>
-
     </div>
 
+    <!-- Tab sections for individual items. -->
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" 
-                    id="equipment-tab" 
-                    data-toggle="tab" 
-                    href="#equipment" 
-                    role="tab" 
-                    aria-controls="equipment" 
-                    aria-selected="true">
-                    Equipment</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" 
+                <a class="nav-link active" 
                     id="events-tab" 
                     data-toggle="tab" 
                     href="#events" 
                     role="tab" 
                     aria-controls="events" 
                     aria-selected="false">
-                    Events</a>
-            </li>
+                    Events</a></li>    
+            <li class="nav-item">
+              <a class="nav-link" 
+                    id="equipment-tab" 
+                    data-toggle="tab" 
+                    href="#equipment" 
+                    role="tab" 
+                    aria-controls="equipment" 
+                    aria-selected="true">
+                    Equipment</a></li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                        id="catering-tab" 
+                        data-toggle="tab" 
+                        href="#catering" 
+                        role="tab" 
+                        aria-controls="catering" 
+                        aria-selected="true">
+                        Catering</a></li>            
             <li class="nav-item">
               <a class="nav-link" 
                     id="donations-tab" 
@@ -88,18 +88,7 @@
                     role="tab" 
                     aria-controls="donations" 
                     aria-selected="false">
-                    Donations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" 
-                    id="shoppingCart-tab" 
-                    data-toggle="tab" 
-                    href="#shoppingCart" 
-                    role="tab" 
-                    aria-controls="shoppingCart" 
-                    aria-selected="false">
-                    Shopping Cart</a>
-            </li>
+                    Donations</a></li>
             <li class="nav-item">
                 <a class="nav-link" 
                     id="shuttles-tab" 
@@ -108,8 +97,7 @@
                     role="tab" 
                     aria-controls="shuttles" 
                     aria-selected="false">
-                    Shuttles</a>
-            </li>
+                    Shuttles</a></li>
             <li class="nav-item">
                 <a class="nav-link" 
                     id="landing-tab" 
@@ -118,8 +106,16 @@
                     role="tab" 
                     aria-controls="landing" 
                     aria-selected="false">
-                    Landing</a>
-            </li>
+                    Landing</a></li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                    id="shoppingCart-tab" 
+                    data-toggle="tab" 
+                    href="#shoppingCart" 
+                    role="tab" 
+                    aria-controls="shoppingCart" 
+                    aria-selected="false">
+                    Shopping Cart</a></li>
             <li class="nav-item">
                 <a class="nav-link" 
                     id="checkout-tab" 
@@ -128,77 +124,123 @@
                     role="tab" 
                     aria-controls="checkout" 
                     aria-selected="false">
-                    Checkout</a>
+                    Checkout</a></li>
+            <li class="nav-item">
+                <div class="btn-group" role="group" aria-label="Basic example" style="height: 100%;">
+                    <div class="btn-group" role="group">
+                        <!-- Small button groups (default and split) -->
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" 
+                                    type="button" 
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false"
+                                    style="background-color: aliceblue;
+                                    color: #157efb;">
+                            Account
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="#">Register</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
-
           </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="equipment-tab">
-                Equipment
+          <div class="jumbotron jumbotron-fluid jumbotron-billboard">
+            <div class="img"></div>
+          <!-- Block content for tabbed sections. -->
+            <div class="tab-content" id="myTabContent">
+                <!-- Ali -->
+                <div class="tab-pane fade  show active" id="events" role="tabpanel" aria-labelledby="events-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Events</h2>
+                            <p>Please use the calendar to select a date.</p>
+                            <div class="container">
+                                <div class='calendar'></div>
+                            </div>                                  
+                        </div>
+                    </div>                            
+                </div>
+                <!-- Scott -->
+                <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Equipment</h2>
+                            <p>Please use the calendar to select a date.</p>
+                            <div class="container">
+                                <div class='calendar'></div>
+                            </div>                                  
+                        </div>
+                    </div>           
+                </div>
+                <!-- Chris -->
+                <div class="tab-pane fade" id="catering" role="tabpanel" aria-labelledby="catering-tab">
+                        <div class="card col-lg-12">
+                            <div class="card-body">
+                                <h2>Catering</h2>
+                                <p>Please use the calendar to select a date.</p>
+                                <div class="container">
+                                    <div class='calendar'></div>
+                                </div>                                  
+                            </div>
+                        </div>           
+                    </div>
+                <!-- Ali -->
+                <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="donations-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Donations</h2>                                 
+                        </div>
+                    </div>         
+                </div>
+                <!-- Ali -->
+                <div class="tab-pane fade" id="shoppingCart" role="tabpanel" aria-labelledby="shoppingCart-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Shopping Cart</h2>                                 
+                        </div>
+                    </div>   
+                </div>
+                <!-- Chris -->
+                <div class="tab-pane fade" id="shuttles" role="tabpanel" aria-labelledby="shuttles-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Shuttles</h2>
+                            <p>Please use the calendar to select a date.</p>
+                            <div class="container">
+                                <div class='calendar'></div>
+                            </div>                                  
+                        </div>
+                    </div>         
+                </div>
+                <!-- Kaelan -->
+                <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Landing</h2>                                 
+                        </div>
+                    </div>   
+                </div>
+                <!-- Kaelan -->
+                <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Checkout</h2>                                 
+                        </div>
+                    </div>   
+                </div>
             </div>
-            <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
-                Events
-            </div>
-            <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="donations-tab">
-                Donations
-            </div>
-            <div class="tab-pane fade" id="shoppingCart" role="tabpanel" aria-labelledby="shoppingCart-tab">
-                Shopping Cart
-            </div>
-            <div class="tab-pane fade" id="shuttles" role="tabpanel" aria-labelledby="shuttles-tab">
-                Shuttles
-            </div>
-            <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
-                Landing
-            </div>
-            <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
-                Checkout
-            </div>
-          </div>
-
-    <div class="container-fluid">
-        <div class="row">
-
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            
-            <!-- Scott -->
-            <!-- <div id="equipment" class="transbox"></div>
-            Testing
-            <div id="register" class="transbox"></div> -->
-            <!-- Ali -->
-            <div id="events" class="transbox">
-                Testing
-            </div>
-            <div id="donations" class="transbox"></div>
-            <div id="shoppingCart" class="transbox"></div>
-            <!-- Chris -->
-            <!-- <div id="catering" class="transbox"></div>
-            <div id="shuttles" class="transbox"></div> -->
-            <!-- Kaelen -->
-            <!-- <div id="landing" class="transbox"></div>
-            <div id="checkOut" class="transbox"></div> -->
-            <!-- Bryan gots login-->
-            <!-- <div id="login" class="transbox"></div>
-            <div id="emDashboard" class="transbox"></div>
-            <div id="volDashboard" class="transbox"></div>
-            <div id="userDashboard" class="transbox"></div> -->
-        </div>
-    </div>
+        </div>        
 
     <tr id="bottomBar">
         <td bgcolor="#f2bb26">
             Bottom Bar - the Basic "Contact Us" and licensing info at the bottom of most pages
         </td>
     </tr>
-<!--<script src="stuff.js"></script> -->
 </body>
 </html>
-
-<!--
-
-
--->

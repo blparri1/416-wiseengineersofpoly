@@ -9,6 +9,34 @@ table.center {
     margin-right:auto;
 }
 
+.jumbotron {
+    margin-bottom: 0px;
+    position:relative;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.jumbotron .container {
+    position:relative;
+    z-index:2;
+  }
+
+.jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.2;
+    color: #fff;
+    background: #000 url("http://bisbeecalendar.com/static/images/hero/2014_VB.jpg") top center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+
 tr.mainBackground {
     background: url("images/mainBackground.jpg") no-repeat;
 }
