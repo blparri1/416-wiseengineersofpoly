@@ -33,12 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
 </head>
 <body>
-    <!-- Bryan gots login-->
-            <!-- <div id="login" class="transbox"></div>
-            <div id="emDashboard" class="transbox"></div>
-            <div id="volDashboard" class="transbox"></div>
-            <div id="userDashboard" class="transbox"></div> -->
-
+    
     <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
     <div class="container-fluid">
         <div class="row"
@@ -51,10 +46,42 @@
     </div>
 
     <!-- Tab sections for individual items. -->
-
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
+                <div class="btn-group" role="group" aria-label="Basic example" style="height: 100%;">
+                    <div class="btn-group" role="group">
+                        <!-- Small button groups (default and split) -->
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" 
+                                    type="button" 
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false"
+                                    style="background-color: aliceblue;
+                                    color: #157efb;">
+                            Account
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="#">Register</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" 
+                    id="dashboard-tab" 
+                    data-toggle="tab" 
+                    href="#dashboard" 
+                    role="tab" 
+                    aria-controls="dashboard" 
+                    aria-selected="false">
+                    Dashboard</a></li> 
+            <li class="nav-item">
+                <a class="nav-link" 
                     id="events-tab" 
                     data-toggle="tab" 
                     href="#events" 
@@ -125,37 +152,32 @@
                     aria-controls="checkout" 
                     aria-selected="false">
                     Checkout</a></li>
-            <li class="nav-item">
-                <div class="btn-group" role="group" aria-label="Basic example" style="height: 100%;">
-                    <div class="btn-group" role="group">
-                        <!-- Small button groups (default and split) -->
-                        <div class="btn-group">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" 
-                                    type="button" 
-                                    data-toggle="dropdown" 
-                                    aria-haspopup="true" 
-                                    aria-expanded="false"
-                                    style="background-color: aliceblue;
-                                    color: #157efb;">
-                            Account
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
           </ul>
           <div class="jumbotron jumbotron-fluid jumbotron-billboard">
             <div class="img"></div>
           <!-- Block content for tabbed sections. -->
             <div class="tab-content" id="myTabContent">
+                <!-- Bryan -->
+                <div class="tab-pane fade  show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <div class="container" id="emDashboard">
+                                <h2>Employee Dashboard</h2>
+                                <p>Today's events are as follows:</p>
+                            </div>
+                            <!-- <div class="container" id="volDashboard">
+                                <h2>Volunteer Dashboard</h2>
+                                <p>Today's events are as follows:</p>
+                            </div> -->
+                            <!-- <div class="container" id="userDashboard">
+                                <h2>User Dashboard</h2>
+                                <p>Today's events are as follows:</p>
+                            </div> -->
+                        </div>
+                    </div>                            
+                </div>
                 <!-- Ali -->
-                <div class="tab-pane fade  show active" id="events" role="tabpanel" aria-labelledby="events-tab">
+                <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2>Events</h2>
