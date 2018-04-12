@@ -61,11 +61,8 @@
                                     color: #157efb;">
                             Account
                             </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                            <div class="dropdown-menu" id="loginMenu">
+                                <!-- Created via the main.js if logged in or not -->
                             </div>
                         </div>
                     </div>
@@ -153,6 +150,34 @@
                     aria-selected="false">
                     Checkout</a></li>
           </ul>
+          <!-- Bryan  login/register overlay -->
+          <div id="loginOverlay" class="overlay">
+              <table class="overlay">
+                  <tr>
+                      <td colspan="2">
+                          <h2>Login</h2>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><div id="loginError"></div></td>
+                  </tr>
+                  <tr>
+                      <td>Username:</td>
+                      <td><input type="text" id="username"></td>
+                  </tr>
+                  <tr>
+                      <td>Password:</td>
+                      <td><input type="password" id="password"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" align="center"><input type="button" value="Submit" onclick="checkLogin()"></td>
+                  </tr>
+              </table>
+          </div>
+          <div id="registerOverlay" class="overlay">
+
+          </div>
+          <!-- end Bryan login/register -->
           <div class="jumbotron jumbotron-fluid jumbotron-billboard">
             <div class="img"></div>
           <!-- Block content for tabbed sections. -->
@@ -162,17 +187,53 @@
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <div class="container" id="emDashboard">
-                                <h2>Employee Dashboard</h2>
-                                <p>Today's events are as follows:</p>
+                                <table width="100%">
+                                    <tr>
+                                        <td width="100%"><h2>Employee Dashboard</h2></td>
+                                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
+                                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><p>Today's events are as follows:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <div id="employeeEvents"></div>
+                                    </tr>
+                                </table>
+
                             </div>
-                            <!-- <div class="container" id="volDashboard">
-                                <h2>Volunteer Dashboard</h2>
-                                <p>Today's events are as follows:</p>
-                            </div> -->
-                            <!-- <div class="container" id="userDashboard">
-                                <h2>User Dashboard</h2>
-                                <p>Today's events are as follows:</p>
-                            </div> -->
+                            <div class="container" id="volDashboard">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="100%"><h2>Volunteer Dashboard</h2></td>
+                                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
+                                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><p>Today's events are as follows:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <div id="volEvents"></div>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div class="container" id="userDashboard">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="100%"><h2>User Dashboard</h2></td>
+                                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
+                                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><p>Today's events are as follows:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <div id="userEvents"></div>
+                                    </tr>
+                                </table>
+
+                            </div>
                         </div>
                     </div>                            
                 </div>

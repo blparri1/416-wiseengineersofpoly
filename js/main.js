@@ -1,5 +1,121 @@
+var loggedin;
+var employee;
+var volunteer;
+var user;
+var username;
+
+function showLandingPage() {
+    hideAll();
+    document.getElementById("landing").hidden = false;
+}
+
+function loginMenu() {
+    if (loggedin == false) {
+        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
+            "<a class=\"dropdown-item\" href=\"#\">Register</a>";
+    } else {
+        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='gotoDashboard()'>Dashboard</a>" +
+            "<div class=\"dropdown-divider\"></div>" +
+            "<a class=\"dropdown-item\" onclick='loggingOut()'>Logout</a>";
+    }
+}
+
+function gotoDashboard() {
+    if (employee == true) {
+        showEmpDashboard();
+    } else if (volunteer == true) {
+        showVolDashboard();
+    } else {
+        showUserDashboard();
+    }
+}
+
+function hideAll() {
+    document.getElementById("emDashboard").hidden = true;
+    document.getElementById("volDashboard").hidden = true;
+    document.getElementById("userDashboard").hidden = true;
+    document.getElementById("events").hidden = true;
+    document.getElementById("equipment").hidden = true;
+    document.getElementById("catering").hidden = true;
+    document.getElementById("donations").hidden = true;
+    document.getElementById("shoppingCart").hidden = true;
+    document.getElementById("shuttles").hidden = true;
+    document.getElementById("landing").hidden = true;
+    document.getElementById("checkout").hidden = true;
+    hideOverlay();
+}
+
+function hideOverlay(){
+    document.getElementById("loginOverlay").hidden = true;
+    document.getElementById("loginOverlay").style.display = "block";
+    document.getElementById("registerOverlay").hidden = true;
+    document.getElementById("registerOverlay").style.display = "block";
+}
+
+function showEmpDashboard() {
+    document.getElementById("emDashboard").hidden = false;
+    document.getElementById("volDashboard").hidden = true;
+    document.getElementById("userDashboard").hidden = true;
+}
+
+function showVolDashboard() {
+    document.getElementById("emDashboard").hidden = true;
+    document.getElementById("volDashboard").hidden = false;
+    document.getElementById("userDashboard").hidden = true;
+}
+
+function showUserDashboard() {
+    document.getElementById("emDashboard").hidden = true;
+    document.getElementById("volDashboard").hidden = true;
+    document.getElementById("userDashboard").hidden = false;
+}
+
+function showLogin() {
+    document.getElementById("loginOverlay").hidden = false;
+    document.getElementById("loginOverlay").style.display = "block";
+}
+
+function checkLogin() {
+    if (databaseLogin(document.getElementById('username').value, document.getElementById('password').value)) {
+      loggedin = true;
+      if (getStatus(databaseLogin(document.getElementById('username').value) == 'emp')) {
+          employee = true;
+          volunteer = true;
+          user = true;
+      } else if (getStatus(databaseLogin(document.getElementById('username').value) == 'emp')) {
+          volunteer = true;
+          user = true;
+      } else {
+          user = true;
+      }
+      username = document.getElementById('username').value;
+      loginMenu();
+      showLandingPage();
+    } else {
+        document.getElementById("loginError").innerHTML = "<font color=\"red\">Username and/or password incorrect</font>";
+    }
+}
+
+function loggingOut(){
+    employee = false;
+    volunteer = false;
+    user = false;
+    loggedin = false;
+    showLandingPage();
+    loginMenu();
+}
+
 $(document).ready(function() {
-          
+
+    employee = false;
+    volunteer = false;
+    user = false;
+    loggedin = false;
+
+    hideAll();
+    loginMenu();
+    showLandingPage();
+
     $('.calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -65,3 +181,15 @@ $(document).ready(function() {
     });
 
   });
+
+/* Stub Area */
+function databaseLogin (username, password) {
+  if ((username == 'baldguy') && (password == 'password')) {
+      return true;
+  }
+  return false;
+}
+
+function getStatus(username) {
+  return 'emp';
+}
