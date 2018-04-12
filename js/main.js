@@ -14,7 +14,7 @@ function loginMenu() {
         document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
             "<a class=\"dropdown-item\" href=\"#\">Register</a>";
     } else {
-        document.getElementById("loginMenu").innerHTML = "<a class=\"nav-link active\" \n" +
+        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" \n" +
             "                    id=\"dashboard-tab\" \n" +
             "                    data-toggle=\"tab\" \n" +
             "                    href=\"#dashboard\" \n" +
