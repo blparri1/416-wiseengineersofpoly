@@ -14,7 +14,14 @@ function loginMenu() {
         document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
             "<a class=\"dropdown-item\" href=\"#\">Register</a>";
     } else {
-        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='gotoDashboard()'>Dashboard</a>" +
+        document.getElementById("loginMenu").innerHTML = "<a class=\"nav-link active\" \n" +
+            "                    id=\"dashboard-tab\" \n" +
+            "                    data-toggle=\"tab\" \n" +
+            "                    href=\"#dashboard\" \n" +
+            "                    role=\"tab\" \n" +
+            "                    aria-controls=\"dashboard\" \n" +
+            "                    aria-selected=\"false\">\n" +
+            "                    Dashboard</a>" +
             "<div class=\"dropdown-divider\"></div>" +
             "<a class=\"dropdown-item\" onclick='loggingOut()'>Logout</a>";
     }
@@ -34,14 +41,6 @@ function hideAll() {
     document.getElementById("emDashboard").hidden = true;
     document.getElementById("volDashboard").hidden = true;
     document.getElementById("userDashboard").hidden = true;
-    document.getElementById("events").hidden = true;
-    document.getElementById("equipment").hidden = true;
-    document.getElementById("catering").hidden = true;
-    document.getElementById("donations").hidden = true;
-    document.getElementById("shoppingCart").hidden = true;
-    document.getElementById("shuttles").hidden = true;
-    document.getElementById("landing").hidden = true;
-    document.getElementById("checkout").hidden = true;
     hideOverlay();
 }
 
