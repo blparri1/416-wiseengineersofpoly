@@ -178,7 +178,31 @@
               </table>
           </div>
           <div id="registerOverlay" class="overlay">
-
+              <table class="overlay">
+                  <tr>
+                      <td colspan="2">
+                          <h2>Register</h2>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Username:</td>
+                      <td><input type="text" id="newUsername"></td>
+                  </tr>
+                  <tr>
+                      <td>Email:</td>
+                      <td><input type="text" id="newEmail"></td>
+                  </tr>
+                  <tr>
+                      <td>Password:</td>
+                      <td><input type="password" id="newPassword"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" align="center">
+                          <input type="button" value="Submit" onclick="registerNewUser()">
+                          <input type="button" value="Cancel" onclick="hideOverlay()">
+                      </td>
+                  </tr>
+              </table>
           </div>
           <!-- end Bryan login/register -->
           <div class="jumbotron jumbotron-fluid jumbotron-billboard">
@@ -308,9 +332,9 @@
                 <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
-                            <h2>Landing</h2>                                 
+                            <h2>Landing</h2>
                         </div>
-                    </div>   
+                    </div>
                 </div>
                 <!-- Kaelan -->
                 <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">

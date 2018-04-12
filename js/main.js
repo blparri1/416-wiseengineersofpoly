@@ -12,7 +12,7 @@ function showLandingPage() {
 function loginMenu() {
     if (loggedin == false) {
         document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
-            "<a class=\"dropdown-item\" href=\"#\">Register</a>";
+            "<a class=\"dropdown-item\" onclick='showRegister()'>Register</a>";
     } else {
         document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" \n" +
             "                    id=\"dashboard-tab\" \n" +
@@ -71,7 +71,10 @@ function showUserDashboard() {
 
 function showLogin() {
     document.getElementById("loginOverlay").hidden = false;
-    document.getElementById("loginOverlay").style.display = "block";
+}
+
+function showRegister() {
+    document.getElementById("registerOverlay").hidden = false;
 }
 
 function checkLogin() {
