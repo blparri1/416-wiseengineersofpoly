@@ -20,6 +20,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous"></script>
+
+
     <!-- Full Calendar Bootstrap API -->
     <link href='css/fullcalendar.min.css' rel='stylesheet' />
     <link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
@@ -32,6 +34,23 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
 </head>
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            orientation: 'bottom right',
+            autoclose: true,
+        })
+    })
+</script>
 <body>
     
     <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
@@ -276,18 +295,50 @@
                         </div>
                     </div>                            
                 </div>
+
+
+
+
+
                 <!-- Scott -->
-                <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
-                    <div class="card col-lg-12">
-                        <div class="card-body">
-                            <h2>Equipment</h2>
-                            <p>Please use the calendar to select a date.</p>
-                            <div class="container">
-                                <div class='calendar'></div>
-                            </div>                                  
+                <div class="tab-pane fade align-items-left justify-content-left" id="equipment"
+                     role="tabpanel" aria-labelledby="equipment-tab">
+                    <div class="card-body ">
+                        <h2>Equipment</h2>
+                        <p>Please use the calendar to select a date.</p>
+
+                        <!-- BIG CALENDAR
+                        <div class="container col-lg-3">
+                            <div class='calendar'></div>
                         </div>
-                    </div>           
+                        -->
+
+                        <!--Start of form div -->
+                        <div class=" container col align-items-left justify-content-left ">
+                                <!-- Form code begins -->
+                                <form class="col-lg-3" method="post">
+                                    <div class="form-group"> <!-- Date input -->
+                                        <label class="control-label" for="date">Start Date:</label>
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                                    </div>
+                                    <div class="form-group"> <!-- Submit button -->
+                                        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                                <!-- Form code ends -->
+
+                            </div><!--End of form div -->
+
+
+
+                    </div>
                 </div>
+
+
+
+
+
+
                 <!-- Chris -->
                 <div class="tab-pane fade" id="catering" role="tabpanel" aria-labelledby="catering-tab">
                         <div class="card col-lg-12">
