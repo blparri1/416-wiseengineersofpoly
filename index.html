@@ -34,15 +34,25 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
 </head>
+
+
 <!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 <script>
     $(document).ready(function(){
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var date_input=$('input[name="startDate"]'); //our date input has the name "date"
+        var date_input2=$('input[name="endDate"]'); //our date input has the name "date"
         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
         date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            orientation: 'bottom right',
+            autoclose: true,
+        })
+        date_input2.datepicker({
             format: 'mm/dd/yyyy',
             container: container,
             todayHighlight: true,
@@ -52,7 +62,7 @@
     })
 </script>
 <body>
-    
+
     <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
     <div class="container-fluid">
         <div class="row"
@@ -102,6 +112,15 @@
                     aria-selected="false">
                     Dashboard</a></li>  -->
             <li class="nav-item">
+                <a class="nav-link"
+                   id="landing-tab"
+                   data-toggle="tab"
+                   href="#landing"
+                   role="tab"
+                   aria-controls="landing"
+                   aria-selected="false">
+                    Home</a></li>
+            <li class="nav-item">
                 <a class="nav-link" 
                     id="events-tab" 
                     data-toggle="tab" 
@@ -109,7 +128,7 @@
                     role="tab" 
                     aria-controls="events" 
                     aria-selected="false">
-                    Events</a></li>    
+                    Events</a></li>
             <li class="nav-item">
               <a class="nav-link" 
                     id="equipment-tab" 
@@ -146,15 +165,7 @@
                     aria-controls="shuttles" 
                     aria-selected="false">
                     Shuttles</a></li>
-            <li class="nav-item">
-                <a class="nav-link" 
-                    id="landing-tab" 
-                    data-toggle="tab" 
-                    href="#landing" 
-                    role="tab" 
-                    aria-controls="landing" 
-                    aria-selected="false">
-                    Landing</a></li>
+
             <li class="nav-item">
                 <a class="nav-link" 
                     id="shoppingCart-tab" 
@@ -288,60 +299,112 @@
                         </div>
                     </div>                            
                 </div>
+
+
+                <!-- Kaelan -->
+                <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
+                    <div class="card col-lg-12">
+                        <div class="card-body">
+                            <h2>Landing</h2>
+                            <p>Please use the calendar to select a date.</p>
+                            <div class="container">
+                                <div class='calendar'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ali -->
                 <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2>Events</h2>
-                            <p>Please use the calendar to select a date.</p>
-                            <div class="container">
-                                <div class='calendar'></div>
-                            </div>                                  
+                            <p>Please look at list of events.</p>
+                        </div>
+                        <!--Container Row for start and end date -->
+                        <div class="container row">
+                            <!--Start Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="startDate">Start Date:</label>
+                                <div>
+                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
+                            <!--End Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="endDate">End Date:</label>
+                                <div>
+                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+
+
+                            <!--ADD YOUR FORM ELEMENTS HERE -->
+
+
+
+                        </div>
+
+                        <div class="container row">
+                            <div class="col-lg-4 col-lg-offset-2 form-group">
+                                <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            </div>
                         </div>
                     </div>                            
                 </div>
 
 
-
-
-
                 <!-- Scott -->
-                <div class="tab-pane fade align-items-left justify-content-left" id="equipment"
-                     role="tabpanel" aria-labelledby="equipment-tab">
+                <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
                     <div class="card-body ">
-                        <h2>Equipment</h2>
-                        <p>Please use the calendar to select a date.</p>
+                       <div class="row-lg-12">
+                        <h2 >Equipment</h2>
+                        <p >Please select a date for your equipment rental.</p>
+                       </div>
 
-                        <!-- BIG CALENDAR
-                        <div class="container col-lg-3">
-                            <div class='calendar'></div>
+                        <!--Container Row for start and end date -->
+                        <div class="container row">
+                            <!--Start Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="startDate">Start Date:</label>
+                                <div>
+                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
+                            <!--End Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="endDate">End Date:</label>
+                                <div>
+                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
                         </div>
-                        -->
 
-                        <!--Start of form div -->
-                        <div class=" container col align-items-left justify-content-left ">
-                                <!-- Form code begins -->
-                                <form class="col-lg-3" method="post">
-                                    <div class="form-group"> <!-- Date input -->
-                                        <label class="control-label" for="date">Start Date:</label>
-                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                                    </div>
-                                    <div class="form-group"> <!-- Submit button -->
-                                        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-                                    </div>
-                                </form>
-                                <!-- Form code ends -->
+                        <div class="form-group">
+                            <div class="col-lg-6 ">
+                                <div class="checkbox">
+                                    <label class="checkbox">
+                                        <input name="Tables" type="checkbox" value="First Choice"/>
+                                        Reserve Tables:
+                                    </label>
+                                    <div class="container col" > TESTING </div>
+                                </div>
+                            </div>
+                        </div>
 
-                            </div><!--End of form div -->
+                        <div class="container row">
+                            <div class="col-lg-4 col-lg-offset-2 form-group">
+                                <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            </div>
+                        </div>
 
 
 
                     </div>
                 </div>
-
-
-
-
 
 
                 <!-- Chris -->
@@ -349,13 +412,46 @@
                         <div class="card col-lg-12">
                             <div class="card-body">
                                 <h2>Catering</h2>
-                                <p>Please use the calendar to select a date.</p>
-                                <div class="container">
-                                    <div class='calendar'></div>
-                                </div>                                  
+                                <p>Please select a date your Catering reservation.</p>
+                                </div>
+
+                            <!--Container Row for start and end date -->
+                            <div class="container row">
+                                <!--Start Date -->
+                                <div class="col-lg-4 form-group ">
+                                    <label class="control-label" for="startDate">Start Date:</label>
+                                    <div>
+                                        <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    </div>
+                                </div>
+                                <!--End Date -->
+                                <div class="col-lg-4 form-group ">
+                                    <label class="control-label" for="endDate">End Date:</label>
+                                    <div>
+                                        <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>           
+
+                            <div>
+
+
+                                <!--ADD YOUR FORM ELEMENTS HERE -->
+
+
+
+                            </div>
+
+                            <div class="container row">
+                                <div class="col-lg-4 col-lg-offset-2 form-group">
+                                    <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
+
                 <!-- Ali -->
                 <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="donations-tab">
                     <div class="card col-lg-12">
@@ -364,6 +460,7 @@
                         </div>
                     </div>         
                 </div>
+
                 <!-- Ali -->
                 <div class="tab-pane fade" id="shoppingCart" role="tabpanel" aria-labelledby="shoppingCart-tab">
                     <div class="card col-lg-12">
@@ -372,26 +469,52 @@
                         </div>
                     </div>   
                 </div>
+
+
                 <!-- Chris -->
                 <div class="tab-pane fade" id="shuttles" role="tabpanel" aria-labelledby="shuttles-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2>Shuttles</h2>
                             <p>Please use the calendar to select a date.</p>
-                            <div class="container">
-                                <div class='calendar'></div>
-                            </div>                                  
                         </div>
+                        <!--Container Row for start and end date -->
+                        <div class="container row">
+                            <!--Start Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="startDate">Start Date:</label>
+                                <div>
+                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
+                            <!--End Date -->
+                            <div class="col-lg-4 form-group ">
+                                <label class="control-label" for="endDate">End Date:</label>
+                                <div>
+                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+
+
+                            <!--ADD YOUR FORM ELEMENTS HERE -->
+
+
+
+                        </div>
+
+                        <div class="container row">
+                            <div class="col-lg-4 col-lg-offset-2 form-group">
+                                <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            </div>
+                        </div>
+
                     </div>         
                 </div>
-                <!-- Kaelan -->
-                <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
-                    <div class="card col-lg-12">
-                        <div class="card-body">
-                            <h2>Landing</h2>
-                        </div>
-                    </div>
-                </div>
+
+
                 <!-- Kaelan -->
                 <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
                     <div class="card col-lg-12">
