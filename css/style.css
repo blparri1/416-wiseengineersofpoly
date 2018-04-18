@@ -4,6 +4,13 @@ html, body, #page {
     border-collapse: collapse;
 }
 
+.control-label, .checkboxLabel
+{
+    font-family: "Roboto";
+}
+
+
+
 table.center {
     margin-left:auto;
     margin-right:auto;

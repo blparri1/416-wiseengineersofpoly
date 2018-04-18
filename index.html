@@ -35,32 +35,6 @@
     <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
 </head>
 
-
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
-<script>
-    $(document).ready(function(){
-        var date_input=$('input[name="startDate"]'); //our date input has the name "date"
-        var date_input2=$('input[name="endDate"]'); //our date input has the name "date"
-        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-        date_input.datepicker({
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            orientation: 'bottom right',
-            autoclose: true,
-        })
-        date_input2.datepicker({
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            orientation: 'bottom right',
-            autoclose: true,
-        })
-    })
-</script>
 <body>
 
     <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
@@ -321,86 +295,140 @@
                             <h2>Events</h2>
                             <p>Please look at list of events.</p>
                         </div>
+                        <form class="form-horizontal jumbotron" id="eventForm" method="post">
                         <!--Container Row for start and end date -->
                         <div class="container row">
                             <!--Start Date -->
                             <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="startDate">Start Date:</label>
+                                <label class="control-label" for="startDateEvent">Start Date:</label>
                                 <div>
-                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="startDateEvent" name="startDate"
+                                           placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                             <!--End Date -->
                             <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="endDate">End Date:</label>
+                                <label class="control-label" for="endDateEvent">End Date:</label>
                                 <div>
-                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="endDateEvent" name="endDate"
+                                           placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                         </div>
 
                         <div>
 
-
                             <!--ADD YOUR FORM ELEMENTS HERE -->
 
-
-
                         </div>
-
+                        <!--Submit button -->
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <button class="btn btn-primary " name="submit" type="submit">Submit</button>
                             </div>
                         </div>
+                        </form>
                     </div>                            
                 </div>
 
 
+
+
                 <!-- Scott -->
                 <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
-                    <div class="card-body ">
-                       <div class="row-lg-12">
+                    <div class="card col-lg-12">
+                        <div class="">
                         <h2 >Equipment</h2>
                         <p >Please select a date for your equipment rental.</p>
                        </div>
 
+                        <form class="form-horizontal jumbotron" id="equipmentForm" method="post">
                         <!--Container Row for start and end date -->
                         <div class="container row">
                             <!--Start Date -->
-                            <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="startDate">Start Date:</label>
+                            <div class="col-lg-4 form-group">
+                                <label class="control-label" for="startDateEquipment">Start Date:</label>
                                 <div>
-                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="startDateEquipment" name="startDate"
+                                           placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                             <!--End Date -->
-                            <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="endDate">End Date:</label>
+                            <div class="col-lg-4 form-group">
+                                <label class="control-label" for="endDateEquipment">End Date:</label>
                                 <div>
-                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="endDateEquipment" name="endDate"
+                                           placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-lg-6 ">
-                                <div class="checkbox">
-                                    <label class="checkbox">
-                                        <input name="Tables" type="checkbox" value="First Choice"/>
-                                        Reserve Tables:
-                                    </label>
-                                    <div class="container col" > TESTING </div>
+                        <div class="container row">
+                            <div class="col-lg-2 checkboxTable">
+                                <label class="lead checkboxLabel" ><input type="checkbox" id="selectTables"> Rent
+                                    Tables </label>
+                            </div>
+
+                            <div class="col-lg-2 checkboxChair">
+                                <label class="lead checkboxLabel"><input type="checkbox" id="selectChairs"> Rent Chairs </label>
+                            </div>
+
+                        </div>
+
+
+                        <div class="container row">
+                            <div class="container row" id="changeTableInputs">
+                                <div class="form-group">
+                                    <label name="tableSize" class="control-label col-xs-4">Select Table Size:</label>
+                                    <div class="col-lg-12">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="tableSize" checked="checked" value="3ft">
+                                            3 ft. Table
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="tableSize" checked="checked" value="6ft">
+                                            6 ft. Table
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="tableSize" checked="checked" value="10ft">
+                                            10 ft. Table
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="tableSize" checked="checked" value="round8ft">
+                                            Round 8 ft. Table
+                                        </label>
+                                    </div>
+                                </div>
+
+                            <div class="container row">
+                                <div class="col-lg-4 form-group">
+                                    <label for="state">Tables</label>
+                                    <input type="text" class="form-control" id="state">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="container row" id="changeChairInputs">
+                                <div class="col-lg-4 form-group">
+                                    <label  for="city">Chairs</label>
+                                    <input type="text" class="form-control" id="city">
+                                </div>
+                                <div class="col-lg-4 form-group">
+                                    <label for="state">Chairs</label>
+                                    <input type="text" class="form-control" id="state">
                                 </div>
                             </div>
                         </div>
+
+
+
 
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <button class="btn btn-primary " name="submit" type="submit">Submit</button>
                             </div>
                         </div>
-
+                        </form>
 
 
                     </div>
@@ -415,29 +443,29 @@
                                 <p>Please select a date your Catering reservation.</p>
                                 </div>
 
+                            <form class="form-horizontal jumbotron" id="cateringForm" method="post">
                             <!--Container Row for start and end date -->
                             <div class="container row">
                                 <!--Start Date -->
                                 <div class="col-lg-4 form-group ">
-                                    <label class="control-label" for="startDate">Start Date:</label>
+                                    <label class="control-label" for="startDateCatering">Start Date:</label>
                                     <div>
-                                        <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                        <input class="form-control" id="startDateCatering" name="startDate"
+                                               placeholder="MM/DD/YYYY" type="text"/>
                                     </div>
                                 </div>
                                 <!--End Date -->
                                 <div class="col-lg-4 form-group ">
-                                    <label class="control-label" for="endDate">End Date:</label>
+                                    <label class="control-label" for="endDateCatering">End Date:</label>
                                     <div>
-                                        <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                        <input class="form-control" id="endDateCatering" name="endDate"
+                                               placeholder="MM/DD/YYYY" type="text"/>
                                     </div>
                                 </div>
                             </div>
-
                             <div>
 
-
                                 <!--ADD YOUR FORM ELEMENTS HERE -->
-
 
 
                             </div>
@@ -447,6 +475,7 @@
                                     <button class="btn btn-primary " name="submit" type="submit">Submit</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
 
@@ -478,29 +507,31 @@
                             <h2>Shuttles</h2>
                             <p>Please use the calendar to select a date.</p>
                         </div>
+
+                        <form class="form-horizontal jumbotron" id="shuttlesForm" method="post">
                         <!--Container Row for start and end date -->
                         <div class="container row">
                             <!--Start Date -->
                             <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="startDate">Start Date:</label>
+                                <label class="control-label" for="startDateShuttle">Start Date:</label>
                                 <div>
-                                    <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="startDateShuttle" name="startDate"
+                                           placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                             <!--End Date -->
                             <div class="col-lg-4 form-group ">
-                                <label class="control-label" for="endDate">End Date:</label>
+                                <label class="control-label" for="endDateShuttle">End Date:</label>
                                 <div>
-                                    <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="endDateShuttle" name="endDate"
+                                           placeholder="MM/DD/YYYY"
+                                           type="text"/>
                                 </div>
                             </div>
                         </div>
-
                         <div>
 
-
                             <!--ADD YOUR FORM ELEMENTS HERE -->
-
 
 
                         </div>
@@ -510,7 +541,7 @@
                                 <button class="btn btn-primary " name="submit" type="submit">Submit</button>
                             </div>
                         </div>
-
+                        </form>
                     </div>         
                 </div>
 
@@ -532,4 +563,61 @@
         </td>
     </tr>
 </body>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    var form = $('#equipmentForm'),
+        checkboxTable = $('#selectTables'),
+        chTableBlock = $('#changeTableInputs'),
+        checkboxChair = $('#selectChairs'),
+        chChairBlock = $('#changeChairInputs');
+
+    chTableBlock.hide();
+    chChairBlock.hide();
+
+    checkboxTable.on('click', function() {
+        if($(this).is(':checked')) {
+            chTableBlock.show();
+            chTableBlock.find('input').attr('required', true);
+        } else {
+            chTableBlock.hide();
+            chTableBlock.find('input').attr('required', false);
+        }
+    });
+
+    checkboxChair.on('click', function() {
+        if($(this).is(':checked')) {
+            chChairBlock.show();
+            chChairBlock.find('input').attr('required', true);
+        } else {
+            chChairBlock.hide();
+            chChairBlock.find('input').attr('required', false);
+        }
+    });
+
+
+    $(document).ready(function(){
+        var date_input=$('input[name="startDate"]'); //our startDate input has the name "startDate"
+        var date_input2=$('input[name="endDate"]'); //our endDate input has the name "endDate"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            orientation: 'bottom right',
+            autoclose: true,
+        });
+        date_input2.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            orientation: 'bottom right',
+            autoclose: true,
+        })
+    })
+</script>
+
 </html>
