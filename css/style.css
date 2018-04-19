@@ -22,13 +22,68 @@ table.center {
     margin-right:auto;
 }
 
-.ft10Table {
-    margin-right: 11px
+.projNumber {
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 6px;
 }
 
-.ft3Table, .ft6Table, .round8Table  {
-    margin-right: 14px
+
+.camNumber {
+    margin-top: 8px;
+    margin-right: 6px;
+}
+.chairsNumber {
+    margin-top:8px;
+}
+
+.tvStands {
+    margin-bottom: 8px;
+    margin-left: 12px;
+}
+
+
+.speakerStands {
+    margin-bottom: 6px;
+    margin-left: 40px;
+}
+.microphoneStands {
+    margin-bottom: 6px;
+    margin-left: 40px;
+}
+
+.ft10Table {
+    margin-top: 8px;
+    margin-right: 10px
+}
+.speakerNumber {
+    margin-top: 8px;
+    margin-right: 41px;
+}
+.chairsNumber {
+    margin-right: 6px;
+}
+.ft3Table, .ft6Table, .round8Table {
+    margin-top: 8px;
+    margin-right: 12px;
   }
+.tv32, .tv60, .tv80 {
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.receiverNumber {
+    margin-top: 8px;
+    margin-right: 4px;
+}
+.ampNumber {
+    margin-top: 8px;
+    margin-right: 14px;
+}
+.micNumber {
+    margin-top: 8px;
+    margin-right: 24px;
+}
 
 .jumbotron {
     margin-bottom: 0px;

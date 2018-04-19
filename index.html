@@ -350,102 +350,146 @@
                             <div class="col-lg-4 form-group">
                                 <label class="control-label" for="startDateEquipment">Start Date:</label>
                                 <div>
-                                    <input class="form-control" id="startDateEquipment" name="startDate"
-                                           placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="startDateEquipment" name="startDate" placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                             <!--End Date -->
                             <div class="col-lg-4 form-group">
                                 <label class="control-label" for="endDateEquipment">End Date:</label>
                                 <div>
-                                    <input class="form-control" id="endDateEquipment" name="endDate"
-                                           placeholder="MM/DD/YYYY" type="text"/>
+                                    <input class="form-control" id="endDateEquipment" name="endDate" placeholder="MM/DD/YYYY" type="text"/>
                                 </div>
                             </div>
                         </div>
 
-                            <!--Divider line -->
-                            <div><hr/></div>
 
-                            <!--Checkbox for rental equipment -->
-                            <div>
-                                <label class="col-lg-8 lead" > Select all equipment items you would like to
-                                    rent:</label>
-                            </div>
+                        <!--Checkboxes for all the different rental equipment -->
+                            <div><hr/></div><!--Divider line -->
+                        <div>
+                            <label class="col-lg-8 lead" ><mark><strong> Select all equipment items you would like to rent:</strong></mark></label>
+                        </div>
                         <div class="container row">
                             <div class="col-lg-2 checkboxTable">
-                                <label class="lead checkboxLabel" ><input type="checkbox" id="selectTables"> Rent
-                                    Tables </label>
+                                <label class="lead checkboxLabel" ><input type="checkbox" id="selectTables"> Rent Tables </label>
                             </div>
-
                             <div class="col-lg-2 checkboxChair">
                                 <label class="lead checkboxLabel"><input type="checkbox" id="selectChairs"> Rent Chairs </label>
                             </div>
-
+                            <div class="col-lg-2 checkboxChair">
+                                <label class="lead checkboxLabel"><input type="checkbox" id="selectAudio"> Rent Audio</label>
+                            </div>
+                            <div class="col-lg-2 checkboxChair">
+                                <label class="lead checkboxLabel"><input type="checkbox" id="selectVideo"> Rent Video</label>
+                            </div>
                         </div>
 
 
+                        <!--All of the Toggles for different checkboxes  -->
                         <div class="container row">
+                            <!--Table Toggle  -->
                             <div class="container row" id="changeTableInputs">
-
-                                <label name="tableSize row" class="lead control-label col-lg-8"><br>Select Table Size:</label>
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>SELECT TABLES:</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
-                                    <span class="input-group-addon">
-                                        <label class="checkbox-inline ft3Table">
-                                            <input type="checkbox" name="tableSize" checked="checked" value="3ft">
-                                            3 ft. Table:
-                                        </label>
-                                    </span>
-                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                    <span class="input-group-addon"><label class="checkbox-inline ft3Table">
+                                        <input type="checkbox" name="tableSize" value="3ft">3 ft. Table:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
-                                        <span class="input-group-addon">
-                                            <label class="checkbox-inline ft6Table">
-                                                <input type="checkbox" name="tableSize" checked="checked" value="6ft">
-                                                6 ft. Table:
-                                            </label>
-                                        </span>
-                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                    <span class="input-group-addon"><label class="checkbox-inline ft6Table">
+                                        <input type="checkbox" name="tableSize" value="6ft">6 ft. Table:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
-                                        <span class="input-group-addon">
-                                            <label class="checkbox-inline ft10Table">
-                                                <input type="checkbox" name="tableSize" checked="checked" value="8ft">
-                                                10 ft Table:
-                                            </label>
-                                        </span>
-                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                    <span class="input-group-addon"><label class="checkbox-inline ft10Table">
+                                        <input type="checkbox" name="tableSize" value="8ft">10 ft Table:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
-                                        <span class="input-group-addon">
-                                            <label class="checkbox-inline round8Table">
-                                                <input type="checkbox" name="tableSize" checked="checked" value="round8Table">
-                                                Round 8ft:
-                                            </label>
-                                        </span>
-                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                    <span class="input-group-addon"><label class="checkbox-inline round8Table">
+                                        <input type="checkbox" name="tableSize" value="round8Table">Round 8ft:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                 </div>
                             </div>
 
 
+                            <!--Chair Toggle  -->
                             <div class="container row" id="changeChairInputs">
-                                <div class="col-lg-4 form-group">
-                                    <br>
-                                    <label  for="city">Chairs</label>
-                                    <input type="text" class="form-control" id="city">
-                                </div>
-                                <div class="col-lg-4 form-group">
-                                    <br>
-                                    <label for="state">Chairs</label>
-                                    <input type="text" class="form-control" id="state">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><br><u>SELECT CHAIRS:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon"><label class="chairsNumber">Reserve Chairs:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity of Chairs">
                                 </div>
                             </div>
+
+
+                            <!--Audio Toggle  -->
+                            <div class="container row" id="changeAudioInputs">
+                                <label name="tableSize row"
+                                       class="lead control-label col-lg-8"><br><br><u>SELECT AUDIO:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon"><label class="speakerNumber">Speakers:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-6 offset-lg-1 input-group-addon">
+                                    <label class=" checkbox-inline checkSpeakerStand">
+                                        <input class="col-lg-offset-12 speakerStands" type="checkbox" name="tableSize"
+                                               value="speakerStands">Add Speaker Stands</label>
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon"><label class="micNumber">Microphone:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-6 offset-lg-1  input-group-addon">
+                                    <label class=" checkbox-inline checkMicrophoneStand">
+                                        <input class="col-lg-offset-12 microphoneStands" type="checkbox" name="tableSize"
+                                               value="micStands">Add Microphone Stands</label>
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon"><label class="ampNumber">Speaker Amp:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon"><label class="receiverNumber">Audio Receiver:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                            </div>
+
+                            <!--Video Toggle  -->
+                            <div class="container row" id="changeVideoInputs">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><br><u>SELECT VIDEO:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm " >
+                                    <span class="input-group-addon"><label class="projNumber">Projectors:</label></span>
+                                    <input type="text" class="col-lg-4 form-control " placeholder="Number of Projectors" >
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon"><label class="checkbox-inline tv32">
+                                                <input type="checkbox" name="tableSize" value="32in">32" TV:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon"><label class="checkbox-inline tv60">
+                                                <input type="checkbox" name="tableSize" value="60in">60" TV:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon"><label class="checkbox-inline tv80">
+                                                <input type="checkbox" name="tableSize" value="80in">80" TV:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-lg-6 offset-lg-1  input-group-addon">
+                                    <label class=" checkbox-inline checkTVStand">
+                                        <input class="col-lg-offset-12 tvStands" type="checkbox" name="tableSize" value="micStands">Add TV Stands</label>
+                                </div>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon"><label class="camNumber">Video Cameras:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Number of Projectors">
+                                </div>
+                            </div>
+
                         </div>
-
-
 
 
                         <div class="container row">
@@ -619,11 +663,19 @@
         checkboxTable = $('#selectTables'),
         chTableBlock = $('#changeTableInputs'),
         checkboxChair = $('#selectChairs'),
-        chChairBlock = $('#changeChairInputs');
+        chChairBlock = $('#changeChairInputs'),
+         checkboxAudio = $('#selectAudio'),
+        chAudioBlock = $('#changeAudioInputs'),
+        checkboxVideo = $('#selectVideo'),
+        chVideoBlock = $('#changeVideoInputs');
+
 
     chTableBlock.hide();
     chChairBlock.hide();
+    chAudioBlock.hide();
+    chVideoBlock.hide();
 
+    //Show/hide table container
     checkboxTable.on('click', function() {
         if($(this).is(':checked')) {
             chTableBlock.show();
@@ -634,6 +686,7 @@
         }
     });
 
+    //Show/hide chair container
     checkboxChair.on('click', function() {
         if($(this).is(':checked')) {
             chChairBlock.show();
@@ -641,6 +694,28 @@
         } else {
             chChairBlock.hide();
             chChairBlock.find('input').attr('required', false);
+        }
+    });
+
+    //Show/hide audio container
+    checkboxAudio.on('click', function() {
+        if($(this).is(':checked')) {
+            chAudioBlock.show();
+            chAudioBlock.find('input').attr('required', true);
+        } else {
+            chAudioBlock.hide();
+            chAudioBlock.find('input').attr('required', false);
+        }
+    });
+
+    //Show/hide video container
+    checkboxVideo.on('click', function() {
+        if($(this).is(':checked')) {
+            chVideoBlock.show();
+            chVideoBlock.find('input').attr('required', true);
+        } else {
+            chVideoBlock.hide();
+            chVideoBlock.find('input').attr('required', false);
         }
     });
 
