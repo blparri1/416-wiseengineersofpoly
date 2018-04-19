@@ -22,6 +22,14 @@ table.center {
     margin-right:auto;
 }
 
+.ft10Table {
+    margin-right: 11px
+}
+
+.ft3Table, .ft6Table, .round8Table  {
+    margin-right: 14px
+  }
+
 .jumbotron {
     margin-bottom: 0px;
     position:relative;

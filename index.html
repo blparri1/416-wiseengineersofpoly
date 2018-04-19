@@ -324,7 +324,8 @@
                         <!--Submit button -->
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="btn btn-primary " name="submit" type="submit">Add To Cart</button>
+                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                >Add To Cart</button>
                             </div>
                         </div>
                         </form>
@@ -368,7 +369,8 @@
 
                             <!--Checkbox for rental equipment -->
                             <div>
-                                <label class="" > Select all equipment items you would like to rent:</label>
+                                <label class="col-lg-8 lead" > Select all equipment items you would like to
+                                    rent:</label>
                             </div>
                         <div class="container row">
                             <div class="col-lg-2 checkboxTable">
@@ -385,42 +387,58 @@
 
                         <div class="container row">
                             <div class="container row" id="changeTableInputs">
-                                <div class="form-group">
-                                    <label name="tableSize" class="control-label col-xs-4">Select Table Size:</label>
-                                    <div class="col-lg-12">
-                                        <label class="checkbox-inline">
+
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br>Select Table Size:</label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <span class="input-group-addon">
+                                        <label class="checkbox-inline ft3Table">
                                             <input type="checkbox" name="tableSize" checked="checked" value="3ft">
-                                            3 ft. Table
+                                            3 ft. Table:
                                         </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" name="tableSize" checked="checked" value="6ft">
-                                            6 ft. Table
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" name="tableSize" checked="checked" value="10ft">
-                                            10 ft. Table
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" name="tableSize" checked="checked" value="round8ft">
-                                            Round 8 ft. Table
-                                        </label>
-                                    </div>
+                                    </span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
                                 </div>
 
-                            <div class="container row">
-                                <div class="col-lg-4 form-group">
-                                    <label for="state">Tables</label>
-                                    <input type="text" class="form-control" id="state">
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon">
+                                            <label class="checkbox-inline ft6Table">
+                                                <input type="checkbox" name="tableSize" checked="checked" value="6ft">
+                                                6 ft. Table:
+                                            </label>
+                                        </span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                </div>
+
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon">
+                                            <label class="checkbox-inline ft10Table">
+                                                <input type="checkbox" name="tableSize" checked="checked" value="8ft">
+                                                10 ft Table:
+                                            </label>
+                                        </span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
+                                </div>
+
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                        <span class="input-group-addon">
+                                            <label class="checkbox-inline round8Table">
+                                                <input type="checkbox" name="tableSize" checked="checked" value="round8Table">
+                                                Round 8ft:
+                                            </label>
+                                        </span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Number to Rent">
                                 </div>
                             </div>
-                            </div>
+
 
                             <div class="container row" id="changeChairInputs">
                                 <div class="col-lg-4 form-group">
+                                    <br>
                                     <label  for="city">Chairs</label>
                                     <input type="text" class="form-control" id="city">
                                 </div>
                                 <div class="col-lg-4 form-group">
+                                    <br>
                                     <label for="state">Chairs</label>
                                     <input type="text" class="form-control" id="state">
                                 </div>
@@ -432,7 +450,8 @@
 
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="btn btn-primary " name="submit" type="submit">Add To Cart</button>
+                                <br><br>
+                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()">Add To Cart</button>
                             </div>
                         </div>
                         </form>
@@ -479,7 +498,8 @@
 
                             <div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
-                                    <button class="btn btn-primary " name="submit" type="submit">Add To Cart</button>
+                                    <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                    >Add To Cart</button>
                                 </div>
                             </div>
                             </form>
@@ -498,6 +518,10 @@
 
 
                         </form>
+                        <div class="col-lg-4 col-lg-offset-2 form-group">
+                            <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                            >Add To Cart</button>
+                        </div>
                     </div>         
                 </div>
 
@@ -511,6 +535,7 @@
 
 
                         </form>
+
                     </div>   
                 </div>
 
@@ -553,7 +578,8 @@
 
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="btn btn-primary " name="submit" type="submit">Add To Cart</button>
+                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                >Add To Cart</button>
                             </div>
                         </div>
                         </form>
@@ -571,6 +597,7 @@
 
 
                         </form>
+
                     </div>   
                 </div>
             </div>
@@ -637,6 +664,10 @@
             autoclose: true,
         })
     })
+
+    function addToCart() {
+        //TODO add a counter to shopping cart icon
+    }
 </script>
 
 </html>
