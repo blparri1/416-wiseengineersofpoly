@@ -158,6 +158,13 @@ div.overlay{
     z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
+.bg-company-red {
+    background-color: #7a1317;
+}
+.nav-link  {
+    color: #ffffff;
+    font-size: 14px;
+}
 
 #coreTable {
     margin:auto;
