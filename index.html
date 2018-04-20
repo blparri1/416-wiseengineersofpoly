@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SER-416 Website</title>  <!-- Change name once near completion -->
     <!-- BOOTSTRAP CSS CDN -->
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
             crossorigin="anonymous">
@@ -33,6 +33,11 @@
     <script src="js/main.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
+
+    <!--Font Awesome for icons and font styles -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+            integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -148,12 +153,22 @@
                     role="tab" 
                     aria-controls="shoppingCart" 
                     aria-selected="false">
-                    Shopping Cart</a></li>
-        <li><i class="fa fa-shopping-cart"></i>
-            <a href="Cart1.aspx" class="icon-shopping-cart" style="font-size: 25px">
-                <asp:Label ID="lblCartCount" runat="server" CssClass="badge badge-warning"  ForeColor="White"/>3</a>
-        </li>
-            <li class="nav-item">
+                    Cart</a></li>
+            <li>
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <a href="#shoppingCart"  class="icon-shopping-cart" style="font-size: 25px">
+                    <asp:Label
+                            ID="lblCartCount"
+                            runat="server"
+                            CssClass="badge badge-warning"
+                            ForeColor="White"/>3</a>
+            </li>
+
+        
+        <!-- CHECKOUT SHOULD BE A OPTION IN THE SHOPPING CART
+              SHOULDN'T BE ABLE TO GO TO CHECKOUT WITHOUT GOING
+              THROUGH THE SHOPPING CART-->
+            <!-- <li class="nav-item">
                 <a class="nav-link" 
                     id="checkout-tab" 
                     data-toggle="tab" 
@@ -162,7 +177,9 @@
                     aria-controls="checkout" 
                     aria-selected="false">
                     Checkout</a></li>
-          </ul>
+                    -->
+
+    </ul>
           <!-- Bryan  login/register overlay -->
           <div id="loginOverlay" class="overlay">
               <table class="overlay">
