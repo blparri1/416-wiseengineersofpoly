@@ -41,7 +41,13 @@ table.center {
     margin-bottom: 8px;
     margin-left: 12px;
 }
-
+#lblCartCount {
+    font-size: 12px;
+    background: #000000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+}
 
 .speakerStands {
     margin-bottom: 6px;
