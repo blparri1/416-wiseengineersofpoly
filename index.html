@@ -742,7 +742,31 @@
                         </div>
                         <form class="form-horizontal jumbotron col-lg-8" id="cartForm" method="post">
 
-
+							<div class="container row">
+								<table style="width:100%">
+									<tr>
+										<th>Item</th>
+										<th>Price</th>
+										<th>Quantity</th>
+										<th>Extended price</th>
+									</tr>
+									<tr>
+										<th>Donation</th>
+										<th>$100</th>
+										<th>1</th>
+										<th>$100</th>
+									</tr>
+								</table>
+							</div>
+							
+							<!-- Add the total to the list -->
+							
+							<div class="container row">
+                                <div class="col-lg-4 col-lg-offset-2 form-group">
+                                    <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                    >Add To Cart</button>
+                                </div>
+                            </div>
                         </form>
 
                     </div>   
@@ -943,6 +967,10 @@
     function addToCart() {
         //TODO add a counter to shopping cart icon
     }
+	
+	function getCart() {
+		//TODO get a list of all the items in the shopping cart
+	}
 </script>
 
 </html>
