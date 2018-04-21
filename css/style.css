@@ -1,4 +1,6 @@
 html, body, #page {
+    height: 100vh;
+    min-height: 100%;
     margin:0;
     padding:0;
     border-collapse: collapse;
@@ -35,6 +37,9 @@ table.center {
 }
 .chairsNumber {
     margin-top:8px;
+}
+.selectTables {
+    font-weight: bold;
 }
 
 .tvStands {
@@ -104,15 +109,19 @@ table.center {
   }
 
 .jumbotron-billboard .img {
+
+    min-height: auto;
+    padding:0;
+    border-collapse: collapse;
     margin-bottom: 0px;
     opacity: 0.2;
     color: #fff;
     background: #000 url("http://bisbeecalendar.com/static/images/hero/2014_VB.jpg") top center no-repeat;
     width: 100%;
-    height: 100%;
     background-size: cover;
     overflow: hidden;
     position:absolute;
+    height: 100vh;
     top:0;
     left:0;
     z-index:1;
@@ -131,6 +140,7 @@ table.overlay{
 
 tr.mainBackground {
     background: url("images/mainBackground.jpg") no-repeat;
+    margin-bottom: 0px;
 }
 
 td.alignTop{
@@ -190,6 +200,11 @@ div.overlay{
 #bottomBar {
     background-color: #f2bb26;
     height:25px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
 }
+
 
 
