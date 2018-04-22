@@ -236,7 +236,7 @@
           </div>
           <!-- end Bryan login/register -->
           <div class="jumbotron jumbotron-fluid jumbotron-billboard">
-            <div class="img"></div>
+              <div class="img"></div>
           <!-- Block content for tabbed sections. -->
             <div class="tab-content" id="myTabContent">
                 <!-- Bryan -->
@@ -292,7 +292,7 @@
 
                             </div>
                         </div>
-                    </div>                            
+                    </div>
                 </div>
 
 
@@ -413,24 +413,37 @@
                                     <span class="input-group-addon"><label class="checkbox-inline ft3Table">
                                         <input type="checkbox" name="tableSize" value="3ft">3 ft. Table:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$5.50 ea. per day</label>
+                                    </span>
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="checkbox-inline ft6Table">
                                         <input type="checkbox" name="tableSize" value="6ft">6 ft. Table:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price6ft">$7.50 ea. per day</label>
+                                    </span>
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="checkbox-inline ft10Table">
                                         <input type="checkbox" name="tableSize" value="8ft">10 ft Table:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price10ft">$9.50 ea. per day</label>
+                                    </span>
                                 </div>
 
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="checkbox-inline round8Table">
                                         <input type="checkbox" name="tableSize" value="round8Table">Round 8ft:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize"
+                                               value="priceRound">$9.00 ea. per day</label>
+                                    </span>
                                 </div>
                             </div>
 
@@ -441,6 +454,10 @@
                                 <div class="col-lg-8 input-group input-group-sm" >
                                         <span class="input-group-addon"><label class="chairsNumber">Reserve Chairs:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity of Chairs">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="chairPrice"
+                                               value="priceChair">$2.25 ea. per day</label>
+                                    </span>
                                 </div>
                             </div>
 
@@ -452,28 +469,44 @@
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="speakerNumber">Speakers:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="speakerPrice"
+                                               value="priceSpeaker">$140 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-6 offset-lg-1 input-group-addon">
                                     <label class=" checkbox-inline checkSpeakerStand">
                                         <input class="col-lg-offset-12 speakerStands" type="checkbox" name="tableSize"
-                                               value="speakerStands">Add Speaker Stands</label>
+                                               value="speakerStands">Add Stands – $6 ea.</label>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="micNumber">Microphone:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="speakerPrice"
+                                               value="priceMic">$45 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-6 offset-lg-1  input-group-addon">
                                     <label class=" checkbox-inline checkMicrophoneStand">
                                         <input class="col-lg-offset-12 microphoneStands" type="checkbox" name="tableSize"
-                                               value="micStands">Add Microphone Stands</label>
+                                               value="micStands">Add Stands – $4 ea.</label>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="ampNumber">Speaker Amp:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="speakerPrice"
+                                               value="priceAmp">$35 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <span class="input-group-addon"><label class="receiverNumber">Audio Receiver:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="speakerPrice"
+                                               value="priceReceiver">$180 ea. per day</label>
+                                    </span>
                                 </div>
                             </div>
 
@@ -482,30 +515,52 @@
                                 <label name="tableSize row" class="lead control-label col-lg-8"><br><br><u>SELECT VIDEO:</u></label>
                                 <div class="col-lg-8 input-group input-group-sm " >
                                     <span class="input-group-addon"><label class="projNumber">Projectors:</label></span>
-                                    <input type="text" class="col-lg-4 form-control " placeholder="Number of Projectors" >
+                                    <input type="text" class="col-lg-4 form-control " placeholder="Number of Projectors">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="projectorPrice"
+                                               value="priceProj">$220 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                         <span class="input-group-addon"><label class="checkbox-inline tv32">
                                                 <input type="checkbox" name="tableSize" value="32in">32" TV:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tv32Price"
+                                               value="priceTV32">$69 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                         <span class="input-group-addon"><label class="checkbox-inline tv60">
                                                 <input type="checkbox" name="tableSize" value="60in">60" TV:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tv60Price"
+                                               value="priceTV60">$89 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                         <span class="input-group-addon"><label class="checkbox-inline tv80">
                                                 <input type="checkbox" name="tableSize" value="80in">80" TV:</label></span>
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tv80Price"
+                                               value="priceTV80">$119 ea. per day</label>
+                                    </span>
                                 </div>
                                 <div class="col-lg-6 offset-lg-1  input-group-addon">
                                     <label class=" checkbox-inline checkTVStand">
-                                        <input class="col-lg-offset-12 tvStands" type="checkbox" name="tableSize" value="micStands">Add TV Stands</label>
+                                        <input class="col-lg-offset-12 tvStands" type="checkbox" name="tableSize"
+                                               value="micStands">Add Stands – $29</label>
                                 </div>
                                 <div class="col-lg-8 input-group input-group-sm" >
-                                    <span class="input-group-addon"><label class="camNumber">Video Cameras:</label></span>
-                                    <input type="text" class="col-lg-4 form-control" placeholder="Number of Projectors">
+                                    <span
+                                            class="input-group-addon"><label class="camNumber">4k Video Cameras:</label></span>
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="camPrice"
+                                               value="priceCam">$499 ea. per day</label>
+                                    </span>
                                 </div>
                             </div>
 
