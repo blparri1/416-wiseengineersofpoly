@@ -11,10 +11,11 @@ function showLandingPage() {
 
 function loginMenu() {
     if (loggedin == false) {
-        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
-            "<a class=\"dropdown-item\" onclick='showRegister()'>Register</a>";
+
+//        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
+//            "<a class=\"dropdown-item\" onclick='showRegister()'>Register</a>";
     } else {
-        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" \n" +
+/*        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" \n" +
             "                    id=\"dashboard-tab\" \n" +
             "                    data-toggle=\"tab\" \n" +
             "                    href=\"#dashboard\" \n" +
@@ -24,9 +25,10 @@ function loginMenu() {
             "                    Dashboard</a>" +
             "<div class=\"dropdown-divider\"></div>" +
             "<a class=\"dropdown-item\" onclick='loggingOut()'>Logout</a>";
+*/
     }
 }
-
+/*
 function gotoDashboard() {
     if (employee == true) {
         showEmpDashboard();
@@ -36,7 +38,7 @@ function gotoDashboard() {
         showUserDashboard();
     }
 }
-
+*/
 function hideAll() {
     document.getElementById("emDashboard").hidden = true;
     document.getElementById("volDashboard").hidden = true;
