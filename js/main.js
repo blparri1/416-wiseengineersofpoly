@@ -4,11 +4,6 @@ var volunteer;
 var user;
 var username;
 
-//function showLandingPage() {
-//    hideAll();
-//    document.getElementById("landing").hidden = false;f
-//}
-
 function loginMenu() {
     if (loggedin == false) {
         document.getElementById("login").hidden = false;
