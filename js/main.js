@@ -4,6 +4,11 @@ var volunteer;
 var user;
 var username;
 
+//function showLandingPage() {
+//    hideAll();
+//    document.getElementById("landing").hidden = false;f
+//}
+
 function loginMenu() {
     if (loggedin == false) {
         document.getElementById("login").hidden = false;
@@ -142,11 +147,11 @@ function pullEmpEquip(username) {
 $(document).ready(function() {
 
     employee = false;
-
     volunteer = false;
     user = false;
     loggedin = false;
     loginMenu();
+
 
     $('.calendar').fullCalendar({
       header: {
