@@ -247,22 +247,36 @@
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>Employee Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
                                         <td><input type="button" value="User" onclick="showUserDashboard();"></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3"><p>Today's events are as follows:</p></td>
+                                        <td colspan="4"><p>Today's events are as follows:</p></td>
                                     </tr>
                                     <tr>
-                                        <div id="employeeEvents"></div>
+                                        <td>
+                                            <div id="employeeEvents"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20px" colspan="4"><hr></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><p>Today's shuttles are as follows:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="employeeShuttles"></div>
+                                        </td>
                                     </tr>
                                 </table>
-
                             </div>
                             <div class="container" id="volDashboard" hidden="true">
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>Volunteer Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
                                         <td><input type="button" value="User" onclick="showUserDashboard();"></td>
                                     </tr>
@@ -279,6 +293,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>User Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
                                         <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
                                     </tr>

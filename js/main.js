@@ -28,6 +28,7 @@ function loginMenu() {
 function gotoDashboard() {
     document.getElementById("landing").hidden = true;
     if (employee == true) {
+        pullEmpEvents(username);
         showEmpDashboard();
     } else if (volunteer == true) {
         showVolDashboard();
@@ -88,14 +89,11 @@ function checkLogin() {
           employee = true;
           volunteer = true;
           user = true;
-//          showEmpDashboard();
       } else if (getStatus(databaseLogin(document.getElementById('username').value) == 'vol')) {
           volunteer = true;
           user = true;
-//          showVolDashboard();
       } else {
           user = true;
-//          showUserDashboard();
       }
       username = document.getElementById('username').value;
       loginMenu();
@@ -111,8 +109,21 @@ function loggingOut(){
     user = false;
     loggedin = false;
     document.getElementById("landing").show;
-//    showLandingPage();
-    loginMenu();
+    location.reload();
+}
+
+function pullEmpEvents(username) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"20%\"><u>Event</u></td><td width=\"20%\"><u>Poc</u></td><td width=\"10%\"><u>Room #</u></td><td width=\"10%\"><u>Time Begin</u></td><td width=\"10%\"><u>Time End</u></td><td width=\"30%\"><u>Equipment</u></td></tr>"
+    var dataFromServer = getEmpEvents(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
+    }
+    returnData = returnData + "</table";
+    document.getElementById("employeeEvents").innerHTML = returnData;
+}
+
+function pullEmpShuttles(username) {
+
 }
 
 $(document).ready(function() {
@@ -121,9 +132,6 @@ $(document).ready(function() {
     volunteer = false;
     user = false;
     loggedin = false;
-
-//    hideAll();
-//    showEmpDashboard();
     loginMenu();
 
 
@@ -203,4 +211,14 @@ function databaseLogin (username, password) {
 
 function getStatus(username) {
   return 'emp';
+}
+
+function getEmpEvents(user) {
+    var item2 = ["Steve's Birthday", "Steve Stevens", "2", "12:00", "15:00", "20x Folding Chairs, 5x Tables"];
+    var item3 = ["Rockband Practice", "Ozzy Osborne", "1", "13:00", "16:00", ""];
+    var item4 = ["Capple Wedding", "Barbra Cappe", "2", "18:00", "22:00", "40x Folding Chairs, 10x Tables, Catering Services from outside company"];
+    var item5 = ["Gamer's Night", "Carl Smith", "1", "18:00", "23:59", "10x Folding Chairs, 1x Tables"];
+    var item1 = ["Random", "That guy", "3", "9:00", "18:00", "20x Folding Chairs, 5x Tables"];
+    var returndata = [item1, item2, item3, item4, item5];
+    return returndata;
 }
