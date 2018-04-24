@@ -61,42 +61,42 @@
                         <!-- Small button groups (default and split) -->
                         <div class="btn-group">
                             <button class="btn btn-secondary btn-sm dropdown-toggle"
-                                    type="button" 
-                                    data-toggle="dropdown" 
-                                    aria-haspopup="true" 
+                                    type="button"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
                                     aria-expanded="false"
-                                    style="background-color: aliceblue;
-                                    color: #157efb;">
+                                    style="background-color: white;
+                                    color: #7a1317;">
                             Account
                             </button>
                             <div class="bg-company-red dropdown-menu" id="loginMenu">
-                                <!-- Created via the main.js if logged in or not -->
-                                <a class="dropdown-item" id="Login" href="#">Login</a>
-                                <a class="dropdown-item" id="Register" href="#">Register</a>
-                                <a class="dropdown-item" id="dashboard-tab" href="#dashboard">Dashboard</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" id="logout" href="#">Logout</a>
+                                <a class="dropdown-item" id="login" onclick="showLogin()" href="#">Login</a>
+                                <a class="dropdown-item" id="register" onclick="showRegister()" href="#">Register</a>
+                                <a class="dropdown-item" id="logout" onclick="loggingOut()" href="#">Logout</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
- <!--           <li class="nav-item">
-                <a class="nav-link active" 
-                    id="dashboard-tab" 
-                    data-toggle="tab" 
-                    href="#dashboard" 
-                    role="tab" 
-                    aria-controls="dashboard" 
-                    aria-selected="false">
-                    Dashboard</a></li>  -->
             <li class="nav-item">
                 <a class="nav-link"
+                    id="dashboard-tab"
+                    data-toggle="tab"
+                    href="#dashboard"
+                    role="tab"
+                    aria-controls="dashboard"
+                    aria-selected="false"
+                    onclick="gotoDashboard()"
+                    hidden="true">
+                    Dashboard</a></li>
+            <li class="nav-item">
+                <a class="nav-link active"
                    id="landing-tab"
                    data-toggle="tab"
                    href="#landing"
                    role="tab"
                    aria-controls="landing"
+                   onclick="showHome()"
                    aria-selected="false">
                     Home</a></li>
             <li class="nav-item">
@@ -181,7 +181,7 @@
 
     </ul>
           <!-- Bryan  login/register overlay -->
-          <div id="loginOverlay" class="overlay">
+          <div id="loginOverlay" class="overlay" hidden="true">
               <table class="overlay">
                   <tr>
                       <td colspan="2">
@@ -207,7 +207,7 @@
                   </tr>
               </table>
           </div>
-          <div id="registerOverlay" class="overlay">
+          <div id="registerOverlay" class="overlay" hidden="true">
               <table class="overlay">
                   <tr>
                       <td colspan="2">
@@ -243,26 +243,40 @@
                 <div class="tab-pane fade  show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
-                            <div class="container" id="emDashboard">
+                            <div class="container" id="emDashboard" hidden="true">
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>Employee Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
                                         <td><input type="button" value="User" onclick="showUserDashboard();"></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3"><p>Today's events are as follows:</p></td>
+                                        <td colspan="4"><p>Today's events are as follows:</p></td>
                                     </tr>
                                     <tr>
-                                        <div id="employeeEvents"></div>
+                                        <td>
+                                            <div id="employeeEvents"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20px" colspan="4"><hr></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><p>Today's shuttles are as follows:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="employeeShuttles"></div>
+                                        </td>
                                     </tr>
                                 </table>
-
                             </div>
-                            <div class="container" id="volDashboard">
+                            <div class="container" id="volDashboard" hidden="true">
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>Volunteer Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
                                         <td><input type="button" value="User" onclick="showUserDashboard();"></td>
                                     </tr>
@@ -275,10 +289,11 @@
                                 </table>
 
                             </div>
-                            <div class="container" id="userDashboard">
+                            <div class="container" id="userDashboard" hidden="true">
                                 <table width="100%">
                                     <tr>
                                         <td width="100%"><h2>User Dashboard</h2></td>
+                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
                                         <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
                                         <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
                                     </tr>
@@ -297,7 +312,7 @@
 
 
                 <!-- Ali -->
-                <div class="tab-pane fade" id="landing" role="tabpanel" aria-labelledby="landing-tab">
+                <div class="tab-pane active" id="landing" role="tabpanel" aria-labelledby="landing-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2></h2>
