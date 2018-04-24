@@ -43,7 +43,7 @@
 <body>
 
     <!-- Calendar Bootstrap API  https://fullcalendar.io/docs -->
-    <div class="container-fluid">
+    <div class="container-fluid col-lg-12">
         <div class="row"
             style="background-color: #858786;">
                 <h1 class="display-4" 
@@ -235,7 +235,7 @@
               </table>
           </div>
           <!-- end Bryan login/register -->
-          <div class="jumbotron jumbotron-fluid jumbotron-billboard">
+          <div class="jumbotron jumbotron-fluid jumbotron-billboard" style="height:100%;">
               <div class="img"></div>
           <!-- Block content for tabbed sections. -->
             <div class="tab-content" id="myTabContent">
@@ -312,7 +312,7 @@
 
 
                 <!-- Ali -->
-                <div class="tab-pane active" id="landing" role="tabpanel" aria-labelledby="landing-tab">
+                <div class="tab-pane" id="landing" role="tabpanel" aria-labelledby="landing-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2></h2>
@@ -352,23 +352,30 @@
                         </div>
 
                         <div>
-
-                            <div>
-                                <label class="col-lg-8 lead" ><mark><strong> Select all equipment items you would like to rent:</strong></mark></label>
+                            <div class="container row">
+                                <div class="form-group col-md-5">
+                                    <label for="inputEventName">Event Name</label>
+                                    <input type="text" class="form-control" id="inputEventName" placeholder="Community Event">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="attendeePrice"> Price Per Attendee </label>
+                                    <input type="number" class="form-control" id="attendeePrice" placeholder="$12.00">
+                                </div>
                             </div>
                             <div class="container row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
+                                <div class="form-check form-group col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="needRoom">
+                                    <label class="form-check-label" for="needRoom">
+                                        Need Room
+                                    </label>
                                 </div>
-                                <div class="col-lg-2 checkboxChair">
-                                    <label class="lead checkboxLabel"><input type="checkbox" id="selectChairs"> Rent Chairs </label>
+                                <div class="form-group col-md-3">
+                                    <label for="attendeeMax"> Max Attendance </label>
+                                    <input type="number" class="form-control" id="attendeeMax" placeholder="30">
                                 </div>
-                                <div class="col-lg-2 checkboxChair">
-                                    <label class="lead checkboxLabel"><input type="checkbox" id="selectAudio"> Rent Audio</label>
-                                </div>
-                                <div class="col-lg-2 checkboxChair">
-                                    <label class="lead checkboxLabel"><input type="checkbox" id="selectVideo"> Rent Video</label>
+                                <div class="form-group col-md-3">
+                                    <label for="attendeeMin"> Min Attendance </label>
+                                    <input type="number" class="form-control" id="attendeeMin" placeholder="10">
                                 </div>
                             </div>
 
@@ -664,8 +671,20 @@
                         <div class="card-body">
                             <h2>Donations</h2>                                 
                         </div>
-                        <form class="form-horizontal jumbotron col-lg-8" id="donationsForm" method="post">
+                        <form class="form-horizontal jumbotron" id="donationsForm" method="post">
+                            <div class="container row">
+                                <div class="form-check form-group col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="anonDonation">
+                                    <label class="form-check-label" for="anonDonation">
+                                        Anonymous Donation
+                                    </label>
+                                </div>
 
+                                <div class="form-group col-md-3 ">
+                                    <label for="donationAmt"> Donation Amount </label>
+                                    <input type="number" class="form-control" id="donationAmt" placeholder="$10">
+                                </div>
+                            </div>
 
 
                             <div class="container row">
