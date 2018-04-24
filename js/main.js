@@ -4,32 +4,29 @@ var volunteer;
 var user;
 var username;
 
-function showLandingPage() {
-    hideAll();
-    document.getElementById("landing").hidden = false;
-}
+//function showLandingPage() {
+//    hideAll();
+//    document.getElementById("landing").hidden = false;f
+//}
 
 function loginMenu() {
     if (loggedin == false) {
-
-//        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" onclick='showLogin()'>Login</a>" +
-//            "<a class=\"dropdown-item\" onclick='showRegister()'>Register</a>";
+        document.getElementById("login").hidden = false;
+        document.getElementById("register").hidden = false;
+        document.getElementById("dashboard-tab").hidden = true;
+//        document.getElementById("account-div").hidden = true;
+        document.getElementById("logout").hidden = true;
     } else {
-/*        document.getElementById("loginMenu").innerHTML = "<a class=\"dropdown-item\" \n" +
-            "                    id=\"dashboard-tab\" \n" +
-            "                    data-toggle=\"tab\" \n" +
-            "                    href=\"#dashboard\" \n" +
-            "                    role=\"tab\" \n" +
-            "                    aria-controls=\"dashboard\" \n" +
-            "                    aria-selected=\"false\">\n" +
-            "                    Dashboard</a>" +
-            "<div class=\"dropdown-divider\"></div>" +
-            "<a class=\"dropdown-item\" onclick='loggingOut()'>Logout</a>";
-*/
+        document.getElementById("login").hidden = true;
+        document.getElementById("register").hidden = true;
+        document.getElementById("dashboard-tab").hidden = false;
+//        document.getElementById("account-div").hidden = false;
+        document.getElementById("logout").hidden = false;
     }
 }
-/*
+
 function gotoDashboard() {
+    document.getElementById("landing").hidden = true;
     if (employee == true) {
         showEmpDashboard();
     } else if (volunteer == true) {
@@ -38,7 +35,12 @@ function gotoDashboard() {
         showUserDashboard();
     }
 }
-*/
+
+function showHome(){
+    hideAll();
+    document.getElementById("landing").hidden = false;
+}
+
 function hideAll() {
     document.getElementById("emDashboard").hidden = true;
     document.getElementById("volDashboard").hidden = true;
@@ -86,15 +88,18 @@ function checkLogin() {
           employee = true;
           volunteer = true;
           user = true;
-      } else if (getStatus(databaseLogin(document.getElementById('username').value) == 'emp')) {
+//          showEmpDashboard();
+      } else if (getStatus(databaseLogin(document.getElementById('username').value) == 'vol')) {
           volunteer = true;
           user = true;
+//          showVolDashboard();
       } else {
           user = true;
+//          showUserDashboard();
       }
       username = document.getElementById('username').value;
       loginMenu();
-      showLandingPage();
+      hideOverlay();
     } else {
         document.getElementById("loginError").innerHTML = "<font color=\"red\">Username and/or password incorrect</font>";
     }
@@ -105,7 +110,8 @@ function loggingOut(){
     volunteer = false;
     user = false;
     loggedin = false;
-    showLandingPage();
+    document.getElementById("landing").show;
+//    showLandingPage();
     loginMenu();
 }
 
@@ -116,9 +122,10 @@ $(document).ready(function() {
     user = false;
     loggedin = false;
 
-    hideAll();
+//    hideAll();
+//    showEmpDashboard();
     loginMenu();
-    showLandingPage();
+
 
     $('.calendar').fullCalendar({
       header: {

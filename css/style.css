@@ -178,6 +178,11 @@ div.overlay{
     font-size: 14px;
 }
 
+.dropdown-item {
+    color: #ffffff;
+    font-size: 14px;
+}
+
 #coreTable {
     margin:auto;
     padding:0;
