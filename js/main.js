@@ -29,6 +29,8 @@ function gotoDashboard() {
     document.getElementById("landing").hidden = true;
     if (employee == true) {
         pullEmpEvents(username);
+        pullEmpShuttles(username);
+        pullEmpEquip(username);
         showEmpDashboard();
     } else if (volunteer == true) {
         showVolDashboard();
@@ -123,17 +125,33 @@ function pullEmpEvents(username) {
 }
 
 function pullEmpShuttles(username) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"40\"><u>Poc</u></td><td width=\"10\"><u>Vehicle Type</u></td><td width=\"10\"><u>Vehicle ID</u></td><td width=\"10\"><u>Start Time</u></td><td width=\"10\"><u>End Time</u></td><td width=\"20\"><u>Distance</u></td></tr>";
+    var dataFromServer = getEmpShuttles(username);
+    for (var i = 0; i <dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
+    }
+    returnData = returnData + "</table";
+    document.getElementById("employeeShuttles").innerHTML = returnData;
+}
 
+function pullEmpEquip(username) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"15%\"><u>Checkout Date</u></td><td width=\"15%\"><u>Checkin Date</u></td><td width=\"45%\"><u>Equipment</u></td></tr>";
+    var dataFromServer = getEmpEqup(username);
+    for (var i = 0; i <dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
+    }
+    returnData = returnData + "</table";
+    document.getElementById("employeeEquip").innerHTML = returnData;
 }
 
 $(document).ready(function() {
 
     employee = false;
+
     volunteer = false;
     user = false;
     loggedin = false;
     loginMenu();
-
 
     $('.calendar').fullCalendar({
       header: {
@@ -216,9 +234,25 @@ function getStatus(username) {
 function getEmpEvents(user) {
     var item2 = ["Steve's Birthday", "Steve Stevens", "2", "12:00", "15:00", "20x Folding Chairs, 5x Tables"];
     var item3 = ["Rockband Practice", "Ozzy Osborne", "1", "13:00", "16:00", ""];
-    var item4 = ["Capple Wedding", "Barbra Cappe", "2", "18:00", "22:00", "40x Folding Chairs, 10x Tables, Catering Services from outside company"];
+    var item4 = ["Capple Wedding", "Barbra Cappe", "2", "18:00", "22:00", "40x Folding Chairs, 10x Standard Tables, Catering Services from outside company"];
     var item5 = ["Gamer's Night", "Carl Smith", "1", "18:00", "23:59", "10x Folding Chairs, 1x Tables"];
     var item1 = ["Random", "That guy", "3", "9:00", "18:00", "20x Folding Chairs, 5x Tables"];
     var returndata = [item1, item2, item3, item4, item5];
+    return returndata;
+}
+
+function getEmpShuttles(user) {
+    var item1 = ["Steve Stevens", "Bus", "1", "11:00", "12:00", "40 miles"];
+    var item2 = ["Barbra Cappe", "Van", "2", "12:00", "13:00", "20 miles"];
+    var item3 = ["Random Guy", "bus", "2", "6:00", "22:00", "423 miles"];
+    var returndata = [item1, item2, item3];
+    return returndata;
+}
+
+function getEmpEqup(user) {
+    var item1 = ["A. Random Guy", "4/30/2018", "5/10/2018", "100x Folding Chairs, 10x Standard Tables"];
+    var item2 = ["B. Rando Dude", "4/30/2018", "5/2/2018", "10x Folding Chairs"];
+    var item3 = ["That one guy", "4/30/2018", "5/3/2018", "11x Folding Chairs"];
+    var returndata = [item1, item2, item3];
     return returndata;
 }
