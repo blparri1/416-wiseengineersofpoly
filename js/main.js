@@ -3,6 +3,7 @@ var employee;
 var volunteer;
 var user;
 var username;
+var items;
 
 //function showLandingPage() {
 //    hideAll();
@@ -56,6 +57,8 @@ function hideOverlay(){
     document.getElementById("loginOverlay").style.display = "block";
     document.getElementById("registerOverlay").hidden = true;
     document.getElementById("registerOverlay").style.display = "block";
+	document.getElementById("checkoutOverlay").hidden = true;
+	document.getElementById("checkoutOverlay").style.display = "block";
 }
 
 function showEmpDashboard() {
@@ -82,6 +85,10 @@ function showLogin() {
 
 function showRegister() {
     document.getElementById("registerOverlay").hidden = false;
+}
+
+function checkout() {
+	document.getElementById("checkoutOverlay").hidden = false;
 }
 
 function checkLogin() {
@@ -255,4 +262,15 @@ function getEmpEqup(user) {
     var item3 = ["That one guy", "4/30/2018", "5/3/2018", "11x Folding Chairs"];
     var returndata = [item1, item2, item3];
     return returndata;
+}
+
+function getCart() {
+	//TODO get a list of all the items in the shopping cart
+	items = [];
+	
+	items[0] = ["Donation", 50, 1, 50];
+	items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3, 3];
+	items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30, 4.5];
+	
+	return items;
 }

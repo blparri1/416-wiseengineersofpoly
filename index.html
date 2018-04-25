@@ -234,7 +234,37 @@
                   </tr>
               </table>
           </div>
-          <!-- end Bryan login/register -->
+		  <!-- end Bryan login/register -->
+		  
+		<!-- Kaelan Checkout Overlay -->
+		<div id="checkoutOverlay" class="overlay" hidden="true">
+			<table class="overlay">
+				<tr>
+					<td>Enter Payment Information</td>
+				</tr>
+				<tr>
+					<td>Card Number: </td>
+					<td><input type="text" id="cardNumber"></td>
+				</tr>
+				<tr>
+					<td>Card Code: </td>
+					<td><input type="text" id="cardCode"></td>
+				</tr>
+				<tr>
+					<td>Card Date: </td>
+					<td><input type="text" id="cardDate"></td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="button" value="Submit" onclick="submitPayment()">
+					</td>
+					<td align="center">
+						<input type="button" value="Cancel" onclick="hideOverlay()">
+					</td>
+				</tr>
+			</table>
+		</div>
+          
           <div class="jumbotron jumbotron-fluid jumbotron-billboard" style="height:100%;">
               <div class="img"></div>
           <!-- Block content for tabbed sections. -->
@@ -752,12 +782,7 @@
 									</tr>
 									
 									<script language="javascript" type="text/javascript">
-										<!--var items = getCart();-->
-										var items = [];
-		
-										items[0] = ["Donation", 50, 1, 50];
-										items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3, 3];
-										items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30, 4.5];
+										var items = getCart();
 										
 										var size = items.length;
 										var rows = items[0].length;
@@ -784,7 +809,7 @@
 							
 							<div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
-                                    <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                    <button class="btn btn-primary " name="checkout" onClick="checkout()"
                                     >Checkout</button>
                                 </div>
                             </div>
@@ -988,17 +1013,6 @@
     function addToCart() {
         //TODO add a counter to shopping cart icon
     }
-	
-	function getCart() {
-		//TODO get a list of all the items in the shopping cart
-		var items = [];
-		
-		items[0] = ["Donation", 50, 1];
-		items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3];
-		items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30];
-		
-		return items;
-	}
 </script>
 
 </html>
