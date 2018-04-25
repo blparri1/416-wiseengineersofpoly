@@ -147,18 +147,18 @@ $(document).ready(function() {
       editable: true,
       events: [
         {
-          title: 'Learn Spanish – Taught by Cynthia Gonzales',
+          title: 'Business Lunch',
           start: '2018-03-03T13:00:00',
           constraint: 'businessHours'
         },
         {
-          title: 'Roboto Ballroom Reserved – Johnson Wedding',
+          title: 'Meeting',
           start: '2018-03-13T11:00:00',
           constraint: 'availableForMeeting', // defined below
           color: '#257e4a'
         },
         {
-          title: '  ',
+          title: 'Conference',
           start: '2018-03-18',
           end: '2018-03-20'
         },
