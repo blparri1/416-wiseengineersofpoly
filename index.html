@@ -742,20 +742,41 @@
                         </div>
                         <form class="form-horizontal jumbotron col-lg-8" id="cartForm" method="post">
 
-							<div class="container row">
-								<table style="width:100%">
+							<div id="CartTable">
+								<table id="shoppingCart" style="width:100%">
 									<tr>
 										<th>Item</th>
 										<th>Price</th>
 										<th>Quantity</th>
-										<th>Extended price</th>
+										<th>Extended Price</th>
 									</tr>
-									<tr>
-										<th>Donation</th>
-										<th>$100</th>
-										<th>1</th>
-										<th>$100</th>
-									</tr>
+									
+									<script language="javascript" type="text/javascript">
+										<!--var items = getCart();-->
+										var items = [];
+		
+										items[0] = ["Donation", 50, 1, 50];
+										items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3, 3];
+										items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30, 4.5];
+										
+										var size = items.length;
+										var rows = items[0].length;
+										var tableItems = "";
+										
+										for (i = 0; i < size; i++) {
+											tableItems += "<tr>"
+											
+											for (j = 0; j < rows; j++) {
+											
+												tableItems += "<td>" + String(items[i][j]) + "</td>";
+											}
+											
+											tableItems += "</tr>"
+										}
+										
+										document.write( tableItems );
+										
+									</script>
 								</table>
 							</div>
 							
@@ -764,7 +785,7 @@
 							<div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
                                     <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                    >Add To Cart</button>
+                                    >Checkout</button>
                                 </div>
                             </div>
                         </form>
@@ -861,8 +882,8 @@
                         <div class="card-body">
                             <h2>Checkout</h2>                                 
                         </div>
-                        <form class="form-horizontal jumbotron col-lg-8" id="checkoutForm" method="post">
-
+                        <label >Hello</label>
+						<form class="form-horizontal jumbotron col-lg-8" id="checkoutForm" method="post">
 
                         </form>
 
@@ -970,6 +991,13 @@
 	
 	function getCart() {
 		//TODO get a list of all the items in the shopping cart
+		var items = [];
+		
+		items[0] = ["Donation", 50, 1];
+		items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3];
+		items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30];
+		
+		return items;
 	}
 </script>
 
