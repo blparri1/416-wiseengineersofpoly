@@ -3,6 +3,8 @@ var employee;
 var volunteer;
 var user;
 var username;
+var items;
+var driverNum;
 
 //function showLandingPage() {
 //    hideAll();
@@ -53,9 +55,11 @@ function hideAll() {
 
 function hideOverlay(){
     document.getElementById("loginOverlay").hidden = true;
-    document.getElementById("loginOverlay").style.display = "block";
     document.getElementById("registerOverlay").hidden = true;
-    document.getElementById("registerOverlay").style.display = "block";
+	document.getElementById("checkoutOverlay").hidden = true;
+    document.getElementById("changeDriverOverlay").hidden = true;
+    document.getElementById("changeShuttleTimeOverlay").hidden = true;
+    document.getElementById("changeEquipmentOverlay").hidden = true;
 }
 
 function showEmpDashboard() {
@@ -82,6 +86,10 @@ function showLogin() {
 
 function showRegister() {
     document.getElementById("registerOverlay").hidden = false;
+}
+
+function checkout() {
+	document.getElementById("checkoutOverlay").hidden = false;
 }
 
 function checkLogin() {
@@ -118,30 +126,69 @@ function pullEmpEvents(username) {
     var returnData = "<table width=\"100%\"><tr><td width=\"20%\"><u>Event</u></td><td width=\"20%\"><u>Poc</u></td><td width=\"10%\"><u>Room #</u></td><td width=\"10%\"><u>Time Begin</u></td><td width=\"10%\"><u>Time End</u></td><td width=\"30%\"><u>Equipment</u></td></tr>"
     var dataFromServer = getEmpEvents(username);
     for (var i = 0; i < dataFromServer.length; i++) {
-        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
+        returnData = returnData + "<tr id='empEvent"+i+"'><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td><td><input type=\"button\" value=\"Delete\" onclick=\"empDeleteEvent(" + i + ")\"></td></tr>";
     }
     returnData = returnData + "</table";
     document.getElementById("employeeEvents").innerHTML = returnData;
 }
 
 function pullEmpShuttles(username) {
-    var returnData = "<table width=\"100%\"><tr><td width=\"40\"><u>Poc</u></td><td width=\"10\"><u>Vehicle Type</u></td><td width=\"10\"><u>Vehicle ID</u></td><td width=\"10\"><u>Start Time</u></td><td width=\"10\"><u>End Time</u></td><td width=\"20\"><u>Distance</u></td></tr>";
+    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"10%\"><u>Vehicle Type</u></td><td width=\"10%\"><u>Vehicle ID</u></td><td width=\"10%\"><u>Start Time</u></td><td width=\"10%\"><u>End Time</u><td></td><td width=\"20%\"><u>Distance</u></td><td width=\"15%\"><u>Driver</u></td></tr>";
     var dataFromServer = getEmpShuttles(username);
     for (var i = 0; i <dataFromServer.length; i++) {
-        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td id='shuttleStart" + i + "'>" + dataFromServer[i][3] + "</td><td id='shuttleEnd" + i + "'>" + dataFromServer[i][4] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeShuttleTime(" + i + ")\"></td><td>" + dataFromServer[i][5] + "</td><td id='driver" + i + "'>" + dataFromServer[i][6] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeDriver(" + i + ")\"></td></tr>";
     }
     returnData = returnData + "</table";
     document.getElementById("employeeShuttles").innerHTML = returnData;
 }
 
 function pullEmpEquip(username) {
-    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"15%\"><u>Checkout Date</u></td><td width=\"15%\"><u>Checkin Date</u></td><td width=\"45%\"><u>Equipment</u></td></tr>";
+    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"15%\"><u>Checkout Date</u></td><td width=\"15%\"><u>Checkin Date</u></td><td width=\"45%\"><u>Equipment</u></td><td></td></tr>";
     var dataFromServer = getEmpEqup(username);
     for (var i = 0; i <dataFromServer.length; i++) {
-        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td id='empEquipment"+ i + "'>" + dataFromServer[i][3] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeEquipment(" + i + ")\"></td></tr>";
     }
-    returnData = returnData + "</table";
+    returnData = returnData + "</table>";
     document.getElementById("employeeEquip").innerHTML = returnData;
+}
+
+function changeDriver(driver) {
+    driverNum = driver;
+    document.getElementById("changeDriverOverlay").hidden = false;
+}
+
+function updateDriver() {
+    hideOverlay();
+    document.getElementById("driver" + driverNum).innerHTML = document.getElementById("newDriver").value;
+    updateDriverDatabase(driverNum, document.getElementById("newDriver").value);
+}
+
+function changeShuttleTime(num) {
+    driverNum = num;
+    document.getElementById("changeShuttleTimeOverlay").hidden = false;
+}
+
+function updateShuttleTime() {
+    hideOverlay();
+    document.getElementById("shuttleStart" + driverNum).innerHTML = document.getElementById("updateShuttleStart").value;
+    document.getElementById("shuttleEnd" + driverNum).innerHTML = document.getElementById("updateShuttleEnd").value;
+    updateShuttleTimeDatabase(driverNum, document.getElementById("updateShuttleStart").value, document.getElementById("updateShuttleEnd").value);
+}
+
+function empDeleteEvent(num) {
+    document.getElementById("empEvent" + num).remove();
+    removeEvent("employeeEvent", num);
+}
+
+function changeEquipment(num){
+    driverNum = num;
+    document.getElementById("changeEquipmentOverlay").hidden = false;
+}
+
+function updateEquipment(){
+    hideOverlay();
+    document.getElementById("empEquipment" + driverNum).innerHTML = document.getElementById("updateEquipment").value;
+    updateEquipmentDatabase(driverNum, document.getElementById("updateEquipment").value);
 }
 
 $(document).ready(function() {
@@ -242,9 +289,9 @@ function getEmpEvents(user) {
 }
 
 function getEmpShuttles(user) {
-    var item1 = ["Steve Stevens", "Bus", "1", "11:00", "12:00", "40 miles"];
-    var item2 = ["Barbra Cappe", "Van", "2", "12:00", "13:00", "20 miles"];
-    var item3 = ["Random Guy", "bus", "2", "6:00", "22:00", "423 miles"];
+    var item1 = ["Steve Stevens", "Bus", "1", "11:00", "12:00", "40 miles", "Steve"];
+    var item2 = ["Barbra Cappe", "Van", "2", "12:00", "13:00", "20 miles", "POC"];
+    var item3 = ["Random Guy", "bus", "2", "6:00", "22:00", "423 miles", "POC"];
     var returndata = [item1, item2, item3];
     return returndata;
 }
@@ -255,4 +302,31 @@ function getEmpEqup(user) {
     var item3 = ["That one guy", "4/30/2018", "5/3/2018", "11x Folding Chairs"];
     var returndata = [item1, item2, item3];
     return returndata;
+}
+
+function getCart() {
+	//TODO get a list of all the items in the shopping cart
+	items = [];
+	
+	items[0] = ["Donation", 50, 1, 50];
+	items[1] = ["Room Reservation: Monday May 7th 8:00AM to 8:00PM", 0, 3, 3];
+	items[2] = ["Shuttle: Monday May 5th 5:PM", 1.50, 30, 4.5];
+	
+	return items;
+}
+
+function updateDriverDatabase(num, name){
+    //do nothing - STUB
+}
+
+function updateShuttleTimeDatabase(num, start, end) {
+    //do nothing - STUB
+}
+
+function removeEvent(typeOfUser, num){
+    //do nothing - STUB
+}
+
+function updateEquipmentDatabase(num, equipment) {
+    //do nothing - STUB
 }
