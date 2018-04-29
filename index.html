@@ -234,6 +234,68 @@
                   </tr>
               </table>
           </div>
+        <div id="changeDriverOverlay" class="overlay" hidden="true">
+            <table class="overlay">
+                <tr>
+                    <td colspan="2">
+                        <h2>Change Driver</h2>
+                    </td>
+                </tr>
+                    <td colspan="2"><input type="text" id="newDriver"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Submit" onclick="updateDriver()">
+                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="changeShuttleTimeOverlay" class="overlay" hidden="true">
+            <table class="overlay">
+                <tr>
+                    <td colspan="2">
+                        <h2>Update Shuttle Times</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Time</td>
+                </tr>
+                <tr>
+                <td colspan="2"><input type="text" id="updateShuttleStart"></td>
+                </tr>
+                <tr>
+                    <td>End Time</td>
+                </tr>
+                <tr>
+                <td colspan="2"><input type="text" id="updateShuttleEnd"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Submit" onclick="updateShuttleTime()">
+                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="changeEquipmentOverlay" class="overlay" hidden="true">
+            <table class="overlay">
+                <tr>
+                    <td colspan="2">
+                        <h2>Update Equipment</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" id="updateEquipment"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Submit" onclick="updateEquipment()">
+                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                    </td>
+                </tr>
+            </table>
+        </div>
 		  <!-- end Bryan login/register -->
 		  
 		<!-- Kaelan Checkout Overlay -->
@@ -919,7 +981,7 @@
 
     <div id="bottomBar">
         <label >
-            Bottom Bar - the Basic "Contact Us" and licensing info at the bottom of most pages
+
         </label>
     </div>
 </body>
