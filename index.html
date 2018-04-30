@@ -980,10 +980,10 @@
                                 <label class="lead checkboxLabel"><input type="checkbox" onclick="showHideVan12()" id="b3"> Van - 12 Seats </label>
                             </div>
                             <div class="col-lg-2 checkboxChair">
-                                <label class="lead checkboxLabel"><input type="checkbox" id="b2"> Car - 4 seats </label>
+                                <label class="lead checkboxLabel"><input type="checkbox" onclick="showHideCar()" id="b2"> Car - 4 seats </label>
                             </div>
                             <div class="col-lg-2 checkboxChair">
-                                <label class="lead checkboxLabel"><input type="checkbox" id="b1"> Bus - 40 seats </label>
+                                <label class="lead checkboxLabel"><input type="checkbox" onclick="showHideBus()" id="b1"> Bus - 40 seats </label>
                             </div>
 							
                         </div>
@@ -1010,11 +1010,12 @@
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$49.99 + 25 cents per mile</label>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$49.99 + 45 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
 							</div>
+							</br>
 							
 							<div class="container row">
                             <div class="container row" id="van12">
@@ -1022,11 +1023,45 @@
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$59.99 + 25 cents per mile</label>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$59.99 + 50 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
 							</div>
+							</br>
+							
+							<div class="container row">
+                            <div class="container row" id="car">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of cars:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$25.00 + 20 cents per mile</label>
+                                    </span>
+                                </div>
+                            </div>
+							</div>
+							</br>
+							
+							<div class="container row">
+                            <div class="container row" id="bus">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of busses:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$100.00 + 70 cents per mile</label>
+                                    </span>
+                                </div>
+                            </div>
+							</div>
+							</br>
+							
+							<div class="container row">
+							<div class="col-lg-8 checkboxTable">
+                                <label class="lead checkboxLabel" ><input type="checkbox"  id="b4"> I have reviewed my choice of vehicles and agree to BCS terms of service. </label>
+                            </div>
+							</div>
+							
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
@@ -1059,16 +1094,26 @@ function showHideVan12() {
     }
 }
 
+function showHideCar() {
+    var x = document.getElementById("car");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 
+function showHideBus() {
+    var x = document.getElementById("bus");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 
-
-
-
-
-
-
-
-
+showHideBus();
+showHideCar();
 showHideVan8();
 showHideVan12()
 </script>
