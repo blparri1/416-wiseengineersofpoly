@@ -974,10 +974,10 @@
                         </div>
                         <div class="container row">
                             <div class="col-lg-2 checkboxTable">
-                                <label class="lead checkboxLabel" ><input type="checkbox" id="b4"> Van - 8 Seats </label>
+                                <label class="lead checkboxLabel" ><input type="checkbox" onclick="showHideVan8()" id="b4"> Van - 8 Seats </label>
                             </div>
                             <div class="col-lg-2 checkboxChair">
-                                <label class="lead checkboxLabel"><input type="checkbox" id="b3"> Van - 12 Seats </label>
+                                <label class="lead checkboxLabel"><input type="checkbox" onclick="showHideVan12()" id="b3"> Van - 12 Seats </label>
                             </div>
                             <div class="col-lg-2 checkboxChair">
                                 <label class="lead checkboxLabel"><input type="checkbox" id="b2"> Car - 4 seats </label>
@@ -1003,10 +1003,31 @@
 							
                         </div>
 						 </div>
-						
-						
+						         <!-- Text for drop down goes here-->
+						     <div class="container row">
+                            <div class="container row" id="van8">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of 8 seat vans:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$49.99 + 25 cents per mile</label>
+                                    </span>
+                                </div>
+                            </div>
+							</div>
+							
+							<div class="container row">
+                            <div class="container row" id="van12">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of 12 seat vans:</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$59.99 + 25 cents per mile</label>
+                                    </span>
+                                </div>
+                            </div>
+							</div>
                         <div class="container row">
-
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
                                 >Add To Cart</button>
@@ -1014,9 +1035,47 @@
 							
                         </div>
                         </form>
-                    </div>         
+                    </div> 
+                        <div class="container row">
+                        </div>
                 </div>
 
+<script>
+function showHideVan8() {
+    var x = document.getElementById("van8");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showHideVan12() {
+    var x = document.getElementById("van12");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+showHideVan8();
+showHideVan12()
+</script>
+				
+				
+				
+				
 
                 <!-- Kaelan -->
                 <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
