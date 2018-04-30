@@ -33,10 +33,32 @@ function gotoDashboard() {
         pullEmpEvents(username);
         pullEmpShuttles(username);
         pullEmpEquip(username);
+        pullVolEquip(username);
+        pullVolEvents(username);
+        pullUserRooms(username);
+        pullUserEquipment(username);
+        pullUserCatering(username);
+        pullUserShuttles(username);
+        pullUserDonations(username);
+
         showEmpDashboard();
     } else if (volunteer == true) {
+        pullVolEquip(username);
+        pullVolEvents(username);
+        pullUserRooms(username);
+        pullUserEquipment(username);
+        pullUserCatering(username);
+        pullUserShuttles(username);
+        pullUserDonations(username);
+
         showVolDashboard();
     } else {
+        pullUserRooms(username);
+        pullUserEquipment(username);
+        pullUserCatering(username);
+        pullUserShuttles(username);
+        pullUserDonations(username);
+
         showUserDashboard();
     }
 }
@@ -122,13 +144,20 @@ function loggingOut(){
     location.reload();
 }
 
+function registerNewUser() {
+    document.getElementById("registerOverlay").hidden = true;
+    addUserToDatabase(document.getElementById('newUsername').value, document.getElementById('newEmail').value, document.getElementById('newPassword').value);
+
+}
+
+//Employee Dashboard******************************
 function pullEmpEvents(username) {
     var returnData = "<table width=\"100%\"><tr><td width=\"20%\"><u>Event</u></td><td width=\"20%\"><u>Poc</u></td><td width=\"10%\"><u>Room #</u></td><td width=\"10%\"><u>Time Begin</u></td><td width=\"10%\"><u>Time End</u></td><td width=\"30%\"><u>Equipment</u></td></tr>"
     var dataFromServer = getEmpEvents(username);
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr id='empEvent"+i+"'><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td><td><input type=\"button\" value=\"Delete\" onclick=\"empDeleteEvent(" + i + ")\"></td></tr>";
     }
-    returnData = returnData + "</table";
+    returnData = returnData + "</table>";
     document.getElementById("employeeEvents").innerHTML = returnData;
 }
 
@@ -138,14 +167,14 @@ function pullEmpShuttles(username) {
     for (var i = 0; i <dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td id='shuttleStart" + i + "'>" + dataFromServer[i][3] + "</td><td id='shuttleEnd" + i + "'>" + dataFromServer[i][4] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeShuttleTime(" + i + ")\"></td><td>" + dataFromServer[i][5] + "</td><td id='driver" + i + "'>" + dataFromServer[i][6] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeDriver(" + i + ")\"></td></tr>";
     }
-    returnData = returnData + "</table";
+    returnData = returnData + "</table>";
     document.getElementById("employeeShuttles").innerHTML = returnData;
 }
 
 function pullEmpEquip(username) {
     var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"15%\"><u>Checkout Date</u></td><td width=\"15%\"><u>Checkin Date</u></td><td width=\"45%\"><u>Equipment</u></td><td></td></tr>";
-    var dataFromServer = getEmpEqup(username);
-    for (var i = 0; i <dataFromServer.length; i++) {
+    var dataFromServer = getEmpEquip(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td id='empEquipment"+ i + "'>" + dataFromServer[i][3] + "</td><td><input type=\"button\" value=\"Change\" onclick=\"changeEquipment(" + i + ")\"></td></tr>";
     }
     returnData = returnData + "</table>";
@@ -190,6 +219,80 @@ function updateEquipment(){
     document.getElementById("empEquipment" + driverNum).innerHTML = document.getElementById("updateEquipment").value;
     updateEquipmentDatabase(driverNum, document.getElementById("updateEquipment").value);
 }
+
+//Volunter Items****************
+function pullVolEvents(username) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"20%\"><u>Event</u></td><td width=\"20%\"><u>Poc</u></td><td width=\"10%\"><u>Room #</u></td><td width=\"10%\"><u>Time Begin</u></td><td width=\"10%\"><u>Time End</u></td><td width=\"30%\"><u>Equipment</u></td></tr>"
+    var dataFromServer = getVolEvents(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr id='empEvent"+i+"'><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td><td><input type=\"button\" value=\"Volunteer\" onclick=\"volEvent(" + i + ")\"></td></tr>";
+    }
+    returnData = returnData + "</table>";
+    document.getElementById("volEvents").innerHTML = returnData;
+}
+
+function pullVolEquip(username) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Poc</u></td><td width=\"15%\"><u>Checkout Date</u></td><td width=\"15%\"><u>Checkin Date</u></td><td width=\"45%\"><u>Equipment</u></td></tr>";
+    var dataFromServer = getVolEquip(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td id='empEquipment"+ i + "'>" + dataFromServer[i][3] + "</td></tr>";
+    }
+    returnData = returnData + "</table>";
+    document.getElementById("volEquip").innerHTML = returnData;
+}
+
+//User Items*******************
+
+function pullUserRooms(user) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"25%\"><u>Room</u></td><td width=\"25%\"><u>Date</u></td><td width=\"25%\"><u>Start Time</u></td><td width=\"25%\"><u>End Time</u></td></tr>";
+    var dataFromServer = getUserRooms(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
+    }
+    eturnData = returnData + "</table>";
+    document.getElementById("userRooms").innerHTML = returnData;
+}
+
+function pullUserEquipment(user) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"15%\"><u>Start Date</u></td><td width=\"15%\"><u>End Date</u></td><td width=\"15%\"><u>Start Time</u></td><td width=\"15%\"><u>End Time</u></td><td width=\"40%\"><u>Equipment</u></td></tr>";
+    var dataFromServer = getUserEquip(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td></tr>";
+    }
+    eturnData = returnData + "</table>";
+    document.getElementById("userEquip").innerHTML = returnData;
+}
+
+function pullUserCatering(user) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"15%\"><u>Date</u></td><td width=\"15%\"><u>Start Time</u></td><td width=\"15%\"><u>End Time</u></td><td width=\"55%\"><u>Food Requested</u></td></tr>";
+    var dataFromServer = getUserCatering(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
+    }
+    eturnData = returnData + "</table>";
+    document.getElementById("userCater").innerHTML = returnData;
+}
+
+function pullUserShuttles(user) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"15%\"><u>Date</u></td><td width=\"15%\"><u>Type</u></td><td width=\"15%\"><u>Number</u></td><td width=\"15%\"><u>Start Time</u></td><td width=\"15%\"><u>End Time</u></td><td width=\"25%\"><u>Distance</u></td></tr>";
+    var dataFromServer = getUserShuttles(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
+    }
+    eturnData = returnData + "</table>";
+    document.getElementById("userShuttles").innerHTML = returnData;
+}
+
+function pullUserDonations(user) {
+    var returnData = "<table width=\"100%\"><tr><td width=\"15%\"><u>Date</u></td><td width=\"85%\"><u>Amount</u></td></tr>";
+    var dataFromServer = getUserDonations(username);
+    for (var i = 0; i < dataFromServer.length; i++) {
+        returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td></tr>";
+    }
+    eturnData = returnData + "</table>";
+    document.getElementById("userDonations").innerHTML = returnData;
+}
+
 
 $(document).ready(function() {
 
@@ -296,7 +399,7 @@ function getEmpShuttles(user) {
     return returndata;
 }
 
-function getEmpEqup(user) {
+function getEmpEquip(user) {
     var item1 = ["A. Random Guy", "4/30/2018", "5/10/2018", "100x Folding Chairs, 10x Standard Tables"];
     var item2 = ["B. Rando Dude", "4/30/2018", "5/2/2018", "10x Folding Chairs"];
     var item3 = ["That one guy", "4/30/2018", "5/3/2018", "11x Folding Chairs"];
@@ -315,6 +418,52 @@ function getCart() {
 	return items;
 }
 
+function getVolEvents(user) {
+    var item2 = ["Steve's Birthday", "Steve Stevens", "2", "12:00", "15:00", "20x Folding Chairs, 5x Tables"];
+    var item3 = ["Rockband Practice", "Ozzy Osborne", "1", "13:00", "16:00", ""];
+    var item4 = ["Capple Wedding", "Barbra Cappe", "2", "18:00", "22:00", "40x Folding Chairs, 10x Standard Tables, Catering Services from outside company"];
+    var item5 = ["Gamer's Night", "Carl Smith", "1", "18:00", "23:59", "10x Folding Chairs, 1x Tables"];
+    var item1 = ["Random", "That guy", "3", "9:00", "18:00", "20x Folding Chairs, 5x Tables"];
+    var returndata = [item1, item2, item3, item4, item5];
+    return returndata;
+}
+
+function getVolEquip(user) {
+    var item2 = ["B. Rando Dude", "4/30/2018", "5/2/2018", "10x Folding Chairs"];
+    var returndata = [item2];
+    return returndata;
+}
+
+function getUserRooms(user) {
+    var item1 = ["1", "4/30/2018", "10:00",  "14:00"];
+    var returndata = [item1];
+    return returndata;
+}
+
+function getUserEquip(user) {
+    var item1 = ["4/30/2018", "4/30/2018", "10:00",  "14:00" , "10x Folding Chairs"];
+    var returndata = [item1];
+    return returndata;
+}
+
+function getUserCatering(user) {
+    var item1 = ["4/30/2018", "10:00",  "14:00" , "10x Mexian Dishes"];
+    var returndata = [item1];
+    return returndata;
+}
+
+function getUserShuttles(user) {
+    var item1 = ["4/3/2018", "Van", "2", "9:00", "10:00", "20 miles"];
+    var item2 = ["4/3/2018", "Van", "2", "14:00", "15:00", "20 miles"];
+    var returndata = [item1, item2];
+    return returndata;
+}
+
+function getUserDonations(user) {
+    var item1 = ["$125.00", '2/4/2018'];
+    return [item1];
+}
+
 function updateDriverDatabase(num, name){
     //do nothing - STUB
 }
@@ -329,4 +478,12 @@ function removeEvent(typeOfUser, num){
 
 function updateEquipmentDatabase(num, equipment) {
     //do nothing - STUB
+}
+
+function volEvent(event) {
+    //do Nothing - Stub
+}
+
+function addUserToDatabase(name, email, pass) {
+    //do Nothing - Stub
 }
