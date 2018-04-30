@@ -97,7 +97,7 @@
                    role="tab"
                    aria-controls="landing"
                    onclick="showHome()"
-                   aria-selected="false">
+                   aria-selected="true">
                     Home</a></li>
             <li class="nav-item">
                 <a class="nav-link" 
@@ -105,16 +105,16 @@
                     data-toggle="tab" 
                     href="#events" 
                     role="tab" 
-                    aria-controls="events" 
-                    aria-selected="false">
-                    Events</a></li>
+                    aria-controls="events"
+                    aria-selected="true">
+                    Reservations</a></li>
             <li class="nav-item">
               <a class="nav-link" 
                     id="equipment-tab" 
                     data-toggle="tab" 
                     href="#equipment" 
                     role="tab" 
-                    aria-controls="equipment" 
+                    aria-controls="equipment"
                     aria-selected="true">
                     Equipment</a></li>
             <li class="nav-item">
@@ -123,7 +123,7 @@
                         data-toggle="tab" 
                         href="#catering" 
                         role="tab" 
-                        aria-controls="catering" 
+                        aria-controls="catering"
                         aria-selected="true">
                         Catering</a></li>            
             <li class="nav-item">
@@ -132,8 +132,8 @@
                     data-toggle="tab" 
                     href="#donations" 
                     role="tab" 
-                    aria-controls="donations" 
-                    aria-selected="false">
+                    aria-controls="donations"
+                    aria-selected="true">
                     Donations</a></li>
             <li class="nav-item">
                 <a class="nav-link" 
@@ -141,8 +141,8 @@
                     data-toggle="tab" 
                     href="#shuttles" 
                     role="tab" 
-                    aria-controls="shuttles" 
-                    aria-selected="false">
+                    aria-controls="shuttles"
+                    aria-selected="true">
                     Shuttles</a></li>
 
             <li class="nav-item">
@@ -151,21 +151,20 @@
                     data-toggle="tab" 
                     href="#shoppingCart" 
                     role="tab" 
-                    aria-controls="shoppingCart" 
-                    aria-selected="false">
+                    aria-controls="shoppingCart"
+                    aria-selected="true">
                     Cart</a></li>
             <li>
-                <i class="fas fa-shopping-cart fa-lg" ></i>
-                <a href="#shoppingCart" class="icon-shopping-cart" style="font-size: 25px">
-                    <asp:Label
-
-                            ID="lblCartCount"
-                            runat="server"
-                            CssClass="badge badge-warning"
-                            ForeColor="White"/>3</a>
+                <div id="cart-container">
+                    <div id="cart">
+                        <i class="fas fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                            <a href="#shoppingCart" class="icon-shopping-cart" style="font-size: 25px">
+                                <span id="lblCartCount"></span></a>
+                    </div>
+                </div>
             </li>
 
-        
+
         <!-- CHECKOUT SHOULD BE A OPTION IN THE SHOPPING CART
               SHOULDN'T BE ABLE TO GO TO CHECKOUT WITHOUT GOING
               THROUGH THE SHOPPING CART-->
@@ -542,8 +541,9 @@
                         <!--Submit button -->
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                >Add To Cart</button>
+                                <button class="add btn btn-primary">Add to cart</button>
+                               <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                >Add To Cart</button> -->
                             </div>
                         </div>
                         </form>
@@ -767,7 +767,9 @@
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <br><br>
-                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()">Add To Cart</button>
+                                <button class="add btn btn-primary">Add to cart</button>
+                                <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                 >Add To Cart</button> -->
                             </div>
                         </div>
                         </form>
@@ -839,8 +841,9 @@
 
                             <div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
-                                    <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                    >Add To Cart</button>
+                                    <button class="add btn btn-primary">Add to cart</button>
+                                    <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                     >Add To Cart</button> -->
                                 </div>
                             </div>
                             </form>
@@ -873,8 +876,9 @@
 
                             <div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
-                                    <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                    >Add To Cart</button>
+                                    <button class="add btn btn-primary">Add to cart</button>
+                                    <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                     >Add To Cart</button> -->
                                 </div>
                             </div>
                         </form>
@@ -1064,8 +1068,9 @@
 							
                         <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                >Add To Cart</button>
+                                <button class="add btn btn-primary">Add to cart</button>
+                                <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
+                                 >Add To Cart</button> -->
                             </div>
 							
                         </div>
@@ -1229,11 +1234,16 @@ showHideVan12()
             orientation: 'bottom right',
             autoclose: true,
         })
-    })
+    });
 
-    function addToCart() {
-        //TODO add a counter to shopping cart icon
-    }
+    //Handle the Add To Cart button and add 1 to cart icon everytime the button is clicked
+    var lblCartCount = 0;
+
+    $('.add').click(function (){
+        lblCartCount ++;
+        $('#lblCartCount').html(lblCartCount).css('display', 'block');
+    });
+
 </script>
 
 </html>

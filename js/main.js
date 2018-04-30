@@ -309,46 +309,82 @@ $(document).ready(function() {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
-      defaultDate: '2018-03-12',
+      defaultDate: '2018-05-02',
       navLinks: true, // can click day/week names to navigate views
       businessHours: true, // display business hours
       editable: true,
       events: [
         {
-          title: 'Business Lunch',
-          start: '2018-03-03T13:00:00',
-          constraint: 'businessHours'
+          title: 'Rockband Practice \nOzzy Osborne',
+          start: '2018-05-03T13:00:00',
+          constraint: 'concertHours'
         },
         {
-          title: 'Meeting',
-          start: '2018-03-13T11:00:00',
-          constraint: 'availableForMeeting', // defined below
+          title: "Capple Wedding\nBarbra Cappel",
+          start: '2018-05-13T11:00:00',
+          constraint: 'wedding', // defined below
           color: '#257e4a'
         },
+          {
+              title: "The Mason Wedding \n Colley Ballroom",
+              start: '2018-05-25T11:00:00',
+              constraint: 'wedding', // defined below
+              color: '#257e4a'
+          },
+          {
+              title: "The Goldberg Wedding \n Colley Ballroom",
+              start: '2018-04-30T11:00:00',
+              constraint: 'wedding', // defined below
+              color: '#257e4a'
+          },
         {
-          title: 'Conference',
-          start: '2018-03-18',
-          end: '2018-03-20'
+          title: 'Volunteer Spanish Lessons – by Silvia Gonzales',
+          start: '2018-05-18',
+          end: '2018-05-20',
+            color: '#aaafff'
         },
         {
-          title: 'Party',
-          start: '2018-03-29T20:00:00'
+          title: 'Gamer\'s Night \nby Carl Smith',
+          start: '2018-05-29T20:00:00',
+            color: '#ffaa54'
         },
+          {
+              title: 'Volunteer Arts & Crafts \nby Cynthia Blake',
+              start: '2018-05-14T20:00:00',
+              color: '#ffaa54'
+          },
+          {
+              title: 'Singles Mixer',
+              start: '2018-05-09T20:00:00',
+              color: '#ffaa54'
+          },
 
         // areas where "Meeting" must be dropped
         {
-          id: 'availableForMeeting',
-          start: '2018-03-11T10:00:00',
-          end: '2018-03-11T16:00:00',
-          rendering: 'background'
+          title: 'Charity Drive\n Barrow Neurological Institute ',
+          start: '2018-05-11T10:00:00',
+          end: '2018-05-12T16:00:00',
+            color: '#aaafff'
         },
+          {
+              title: 'Lupus Handbag Luncheon & Silent Auction',
+              start: '2018-05-21T10:00:00',
+              end: '2018-05-22T16:00:00',
+              color: '#aaafff'
+          },
         {
-          id: 'availableForMeeting',
-          start: '2018-03-13T10:00:00',
-          end: '2018-03-13T16:00:00',
-          rendering: 'background'
+          title: 'Graduation Party \nColley Ballroom',
+          start: '2018-05-17T10:00:00',
+          end: '2018-05-17T16:00:00',
+            color: '#caddaa'
         },
-
+          {
+              title: 'Johnson\'s 50th \nWedding Anniversary',
+              start: '2018-05-07T10:00:00',
+              end: '2018-05-07T16:00:00',
+              color: '#caddaa'
+          },
+          
         // red areas where no events can be dropped
         {
           start: '2018-03-24',
