@@ -15,20 +15,23 @@ function loginMenu() {
     if (loggedin == false) {
         document.getElementById("login").hidden = false;
         document.getElementById("register").hidden = false;
-        document.getElementById("dashboard-tab").hidden = true;
+        document.getElementById("dashClick").hidden = true;
+//        document.getElementById("dashboard-tab").hidden = true;
 //        document.getElementById("account-div").hidden = true;
         document.getElementById("logout").hidden = true;
     } else {
         document.getElementById("login").hidden = true;
         document.getElementById("register").hidden = true;
-        document.getElementById("dashboard-tab").hidden = false;
+//        document.getElementById("dashboard-tab").hidden = false;
 //        document.getElementById("account-div").hidden = false;
+        document.getElementById("dashClick").hidden = false;
         document.getElementById("logout").hidden = false;
     }
 }
 
 function gotoDashboard() {
-    document.getElementById("landing").hidden = true;
+    //document.getElementById("landing").hidden = true;
+    document.getElementById("dashboardOverlay").hidden = false;
     if (employee == true) {
         pullEmpEvents(username);
         pullEmpShuttles(username);
@@ -63,10 +66,10 @@ function gotoDashboard() {
     }
 }
 
-function showHome(){
-    hideAll();
-    document.getElementById("landing").hidden = false;
-}
+//function showHome(){
+//    hideAll();
+//    document.getElementById("landing").hidden = false;
+//}
 
 function hideAll() {
     document.getElementById("emDashboard").hidden = true;
@@ -82,6 +85,7 @@ function hideOverlay(){
     document.getElementById("changeDriverOverlay").hidden = true;
     document.getElementById("changeShuttleTimeOverlay").hidden = true;
     document.getElementById("changeEquipmentOverlay").hidden = true;
+    document.getElementById("dashboardOverlay").hidden = true;
 }
 
 function showEmpDashboard() {

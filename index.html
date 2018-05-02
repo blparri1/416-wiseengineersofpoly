@@ -72,12 +72,14 @@
                             <div class="bg-company-red dropdown-menu" id="loginMenu">
                                 <a class="dropdown-item" id="login" onclick="showLogin()" href="#">Login</a>
                                 <a class="dropdown-item" id="register" onclick="showRegister()" href="#">Register</a>
+                                <a class="dropdown-item" id="dashClick" onclick="gotoDashboard()" href="#">Dashboard</a>
                                 <a class="dropdown-item" id="logout" onclick="loggingOut()" href="#">Logout</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
+        <!--
             <li class="nav-item">
                 <a class="nav-link"
                     id="dashboard-tab"
@@ -89,6 +91,7 @@
                     onclick="gotoDashboard()"
                     hidden="true">
                     Dashboard</a></li>
+         -->
             <li class="nav-item">
                 <a class="nav-link active"
                    id="landing-tab"
@@ -96,7 +99,6 @@
                    href="#landing"
                    role="tab"
                    aria-controls="landing"
-                   onclick="showHome()"
                    aria-selected="true">
                     Home</a></li>
             <li class="nav-item">
@@ -296,6 +298,143 @@
                 </tr>
             </table>
         </div>
+
+        <!-- Dashboad Overlay -->
+        <div id="dashboardOverlay" hidden="true" class="overlay">
+            <div class="dashOverlay" id="emDashboard" hidden="true">
+                <table width="100%" class="dashOverlay">
+                    <tr>
+                        <td><input type="button" value="Close" onclick="hideOverlay()"></td>
+                        <td width="100%"><h2>Employee Dashboard</h2></td>
+                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
+                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
+                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Today's events are as follows:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div id="employeeEvents"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Today's shuttles are as follows:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div id="employeeShuttles">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Today's equipment taken off-site are as follows:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div id="employeeEquip"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dashOverlay" id="volDashboard" hidden="true">
+                <table width="100%" class="dashOverlay">
+                    <tr>
+                        <td><input type="button" value="Close" onclick="hideOverlay()"></td>
+                        <td width="100%"><h2>Volunteer Dashboard</h2></td>
+                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
+                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
+                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Today's events are as follows:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="volEvents"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Today's equipment are as follows:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="volEquip"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="dashOverlay" id="userDashboard" hidden="true">
+                <table width="100%" class="dashOverlay">
+                    <tr>
+                        <td><input type="button" value="Close" onclick="hideOverlay()"></td>
+                        <td width="100%"><h2>User Dashboard</h2></td>
+                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
+                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
+                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Reserved Rooms:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="userRooms"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Reserved Equipment:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="userEquip"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Catering Reservations:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="userCater"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Shuttle Reservations:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="userShuttles"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><p>Donations Made:</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><div id="userDonations"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="20px" colspan="4"><hr></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
 		  <!-- end Bryan login/register -->
 		  
 		<!-- Kaelan Checkout Overlay -->
@@ -331,139 +470,11 @@
               <div class="img"></div>
           <!-- Block content for tabbed sections. -->
             <div class="tab-content" id="myTabContent">
-                <!-- Bryan -->
+                <!-- Bryan
                 <div class="tab-pane fade  show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
-                            <div class="container" id="emDashboard" hidden="true">
-                                <table width="100%">
-                                    <tr>
-                                        <td width="100%"><h2>Employee Dashboard</h2></td>
-                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
-                                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
-                                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><p>Today's events are as follows:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <div id="employeeEvents"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><p>Today's shuttles are as follows:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <div id="employeeShuttles">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><p>Today's equipment taken off-site are as follows:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <div id="employeeEquip"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="container" id="volDashboard" hidden="true">
-                                <table width="100%">
-                                    <tr>
-                                        <td width="100%"><h2>Volunteer Dashboard</h2></td>
-                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
-                                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
-                                        <td><input type="button" value="User" onclick="showUserDashboard();"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><p>Today's events are as follows:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><div id="volEvents"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><p>Today's equipment are as follows:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><div id="volEquip"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                </table>
 
-                            </div>
-                            <div class="container" id="userDashboard" hidden="true">
-                                <table width="100%">
-                                    <tr>
-                                        <td width="100%"><h2>User Dashboard</h2></td>
-                                        <td><input type="button" value="Logout" onclick="loggingOut()"></td>
-                                        <td><input type="button" value="Employee" onclick="showEmpDashboard();"></td>
-                                        <td><input type="button" value="Volunteer" onclick="showVolDashboard();"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><p>Reserved Rooms:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div id="userRooms"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><p>Reserved Equipment:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div id="userEquip"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><p>Catering Reservations:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div id="userCater"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><p>Shuttle Reservations:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div id="userShuttles"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><p>Donations Made:</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><div id="userDonations"></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20px" colspan="4"><hr></td>
-                                    </tr>
-                                </table>
-
-                            </div>
                         </div>
                     </div>
                 </div>
