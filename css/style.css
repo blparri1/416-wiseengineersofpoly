@@ -4,6 +4,8 @@ html, body, #page {
     margin:0;
     padding:0;
     border-collapse: collapse;
+    font-family: "Roboto";
+
 }
 
 .control-label, .checkboxLabel
@@ -37,45 +39,6 @@ hr {
     color: white;
     text-align: center;
 }
-
-
-/**.icon-blue {color: #0088cc}
-*.icon-grey {color: grey}
-a {
-    width:100px;
-    text-align:center;
-    vertical-align:middle;
-    position: relative;
-}
-
-#lblCartCount {
-    font-size: 14px;
-    background: #000000;
-    border-radius: 50%;
-    color: #fff;
-    padding: 3px 8px 4px 8px;
-    vertical-align: top;
-    height:2rem;
-
-    position: absolute;
-    display: none;
-}*/
-
-/*#lblCartCount{
-    content:attr(data-count);
-    position: fixed;
-    background: rgba(0,0,255,1);
-    height:2rem;
-    top:1rem;
-    right:1.5rem;
-    width:2rem;
-    text-align: center;
-    line-height: 2rem;
-    font-size: 1rem;
-    border-radius: 50%;
-    color:white;
-    border:1px;
-}*/
 
 
 table.center {
@@ -168,7 +131,7 @@ table.center {
     padding:0;
     border-collapse: collapse;
     margin-bottom: 0px;
-    opacity: 0.2;
+    opacity: 0.09;
     color: #fff;
     background: #000 url("http://bisbeecalendar.com/static/images/hero/2014_VB.jpg") top center no-repeat;
     width: 100%;
@@ -262,7 +225,7 @@ div.editOverlay{
 }
 .nav-link  {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .dropdown-item {

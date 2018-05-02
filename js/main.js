@@ -259,7 +259,7 @@ function pullUserRooms(user) {
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
     }
-    eturnData = returnData + "</table>";
+    returnData = returnData + "</table>";
     document.getElementById("userRooms").innerHTML = returnData;
 }
 
@@ -269,7 +269,7 @@ function pullUserEquipment(user) {
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td></tr>";
     }
-    eturnData = returnData + "</table>";
+    returnData = returnData + "</table>";
     document.getElementById("userEquip").innerHTML = returnData;
 }
 
@@ -279,7 +279,7 @@ function pullUserCatering(user) {
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td></tr>";
     }
-    eturnData = returnData + "</table>";
+    returnData = returnData + "</table>";
     document.getElementById("userCater").innerHTML = returnData;
 }
 
@@ -289,7 +289,7 @@ function pullUserShuttles(user) {
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td><td>" + dataFromServer[i][2] + "</td><td>" + dataFromServer[i][3] + "</td><td>" + dataFromServer[i][4] + "</td><td>" + dataFromServer[i][5] + "</td></tr>";
     }
-    eturnData = returnData + "</table>";
+    returnData = returnData + "</table>";
     document.getElementById("userShuttles").innerHTML = returnData;
 }
 
@@ -299,7 +299,7 @@ function pullUserDonations(user) {
     for (var i = 0; i < dataFromServer.length; i++) {
         returnData = returnData + "<tr><td>" + dataFromServer[i][0] + "</td><td>" + dataFromServer[i][1] + "</td></tr>";
     }
-    eturnData = returnData + "</table>";
+    returnData = returnData + "</table>";
     document.getElementById("userDonations").innerHTML = returnData;
 }
 
@@ -533,3 +533,4 @@ function volEvent(event) {
 function addUserToDatabase(name, email, pass) {
     //do Nothing - Stub
 }
+

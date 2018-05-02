@@ -466,7 +466,7 @@
 			</table>
 		</div>
           
-          <div class="jumbotron jumbotron-fluid jumbotron-billboard" style="height:100%;">
+          <div class="jumbotron jumbotron-fluid jumbotron-billboard" style="" >
               <div class="img"></div>
           <!-- Block content for tabbed sections. -->
             <div class="tab-content" id="myTabContent">
@@ -484,8 +484,27 @@
                 <div class="tab-pane active" id="landing" role="tabpanel" aria-labelledby="landing-tab">
                     <div class="card col-lg-12">
                         <div class="card-body">
-                            <h2></h2>
+                            <h1>Welcome to BCS!</h1>
+                            <div>
+                                <h5 class="col-lg-10 text-justify text-black"><i>
+
+                                    Best Community Services provides direct services to children, families, and adults with the
+                                    purpose of changing lives and improving overall mental health and well-being.
+                                    Located in Williamsburg, NY at 2820 E. Lake Mead Boulevard, we welcome anyone with inquiries of our
+                                    services within the Brooklyn New York area.  We offer the Brooklyn community to
+                                    rent one of our Ballrooms for anything from Business Meetings to Weddings.
+                                    We can also Cater your event with some of the top Chefs in New York, reserve
+                                    equipment for your event and/or rent a shuttle for your event or elderly care.
+                                    BCS is a non-profit and all proceeds go towards maintaining our facility and
+                                    supporting the Barrow Nerological Center in Manhattan.  Whether you are looking
+                                    to Volunteer a BCS sponsored event or would like to rent equipment or donate, Best Community Services is here for you.
+                                <br><br><br>
+                                </i></h5>
+                                <!--<h5 class="text-danger">Reserve your room today!</h5>-->
+
+                            </div>
                             <div class="container">
+                                <h6><strong><u>SEE ALL UPCOMING EVENTS AT BCS THIS MONTH:</u></strong></h6>
                                 <div class='calendar'></div>
                             </div>
                         </div>
@@ -497,10 +516,22 @@
                     <div class="card col-lg-12">
                         <div class="card-body">
                             <h2>Events</h2>
-                            <p>Please look at list of events.</p>
+                            <p>Please delect a date for your Event reservation.</p>
                         </div>
+
                         <form class="form-horizontal jumbotron col-lg-8" id="eventForm" method="post">
                         <!--Container Row for start and end date -->
+                            <div class="container row ">
+                                <div class="col-lg-4 form-group">
+                                    <label for="sel1">Select A Room:</label>
+                                    <select class="form-control" id="sel1">
+                                        <option>Cooley Ballroom</option>
+                                        <option>Crescent Ballroom</option>
+                                        <option>Executive Boardroom</option>
+                                        <option>Phoenix Garden</option>
+                                    </select>
+                                </div>
+                            </div>
                         <div class="container row">
                             <!--Start Date -->
                             <div class="col-lg-4 form-group ">
@@ -522,38 +553,37 @@
 
                         <div>
                             <div class="container row">
-                                <div class="form-group col-md-5">
-                                    <label for="inputEventName">Event Name</label>
+
+                                <div class="form-group col-lg-4">
+                                    <label for="inputEventName">Type Of Event</label>
                                     <input type="text" class="form-control" id="inputEventName" placeholder="Community Event">
                                 </div>
-                                <div class="form-group col-md-3">
+
+                                <div class="form-group col-lg-4">
                                     <label for="attendeePrice"> Price Per Attendee </label>
                                     <input type="number" class="form-control" id="attendeePrice" placeholder="$12.00">
                                 </div>
                             </div>
                             <div class="container row">
-                                <div class="form-check form-group col-md-3">
-                                    <input class="form-check-input" type="checkbox" id="needRoom">
-                                    <label class="form-check-label" for="needRoom">
-                                        Need Room
-                                    </label>
-                                </div>
-                                <div class="form-group col-md-3">
+
+                                <div class="form-group col-lg-4">
                                     <label for="attendeeMax"> Max Attendance </label>
                                     <input type="number" class="form-control" id="attendeeMax" placeholder="30">
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-lg-4">
                                     <label for="attendeeMin"> Min Attendance </label>
                                     <input type="number" class="form-control" id="attendeeMin" placeholder="10">
                                 </div>
+
                             </div>
 
                         </div>
                         </form>
                         <!--Submit button -->
                         <div class="container row">
-                            <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <button class="add btn btn-primary">Add to cart</button>
+                            <div class="col-lg-offset-2 form-group">
+                                <button class="add btn btn-primary" id="cartBttnID" >Add To Cart</button>
+                                <br><br>
                                <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
                                 >Add To Cart</button> -->
                             </div>
@@ -775,11 +805,10 @@
                         </form>
 
                         <div class="container row">
-                            <div class="col-lg-4 col-lg-offset-2 form-group">
-                                <br><br>
+                            <div class="col-lg-offset-2 form-group">
                                 <button class="add btn btn-primary">Add to cart</button>
-                                <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                 >Add To Cart</button> -->
+
+                                <br><br>
                             </div>
                         </div>
 
@@ -968,10 +997,9 @@
 							
 							</br>
                             <div class="container row">
-                                <div class="col-lg-4 col-lg-offset-2 form-group">
+                                <div class="col-lg-offset-2 form-group">
                                     <button class="add btn btn-primary">Add to cart</button>
-                                    <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                     >Add To Cart</button> -->
+                                    <br><br>
                                 </div>
                             </div>
                             </form>
@@ -1044,10 +1072,9 @@ showHideDrinks();
 
                         </form>
                             <div class="container row">
-                                <div class="col-lg-4 col-lg-offset-2 form-group">
+                                <div class="col-lg-offset-2 form-group">
                                     <button class="add btn btn-primary">Add to cart</button>
-                                    <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                     >Add To Cart</button> -->
+                                    <br><br>
                                 </div>
                             </div>
 
@@ -1225,11 +1252,14 @@ showHideDrinks();
 													<div class="col-lg-8 checkboxTable">
                                 <label class="lead checkboxLabel" ><input type="checkbox"  id="b4"> I have reviewed my choice of vehicles and agree to BCS terms of service. </label>
                             </div>
-                            <div class="col-lg-4 col-lg-offset-2 form-group">
+							</div>
+                        </form>
+                        <div class="container row">
+                            <div class="col-lg-offset-2 form-group">
                                 <button class="add btn btn-primary">Add to cart</button>
-                                <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
-                                 >Add To Cart</button> -->
-                            </div>	
+                                <br><br>
+                            </div>
+							
                         </div>
                     </div> 
                         <div class="container row">
@@ -1397,7 +1427,13 @@ showHideVan12()
     $('.add').click(function (){
         lblCartCount ++;
         $('#lblCartCount').html(lblCartCount).css('display', 'block');
+
     });
+
+    /*$('#cartBttnID').click(function() {
+        $('#myTab a[href="#shoppingCart"]').tab('show');
+    });*/
+
 
 </script>
 
