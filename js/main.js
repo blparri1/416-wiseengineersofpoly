@@ -88,6 +88,12 @@ function hideOverlay(){
     document.getElementById("dashboardOverlay").hidden = true;
 }
 
+function hideEditOverlay(){
+    document.getElementById("changeDriverOverlay").hidden = true;
+    document.getElementById("changeShuttleTimeOverlay").hidden = true;
+    document.getElementById("changeEquipmentOverlay").hidden = true;
+}
+
 function showEmpDashboard() {
     document.getElementById("emDashboard").hidden = false;
     document.getElementById("volDashboard").hidden = true;
@@ -191,7 +197,7 @@ function changeDriver(driver) {
 }
 
 function updateDriver() {
-    hideOverlay();
+    hideEditOverlay();
     document.getElementById("driver" + driverNum).innerHTML = document.getElementById("newDriver").value;
     updateDriverDatabase(driverNum, document.getElementById("newDriver").value);
 }
@@ -202,7 +208,7 @@ function changeShuttleTime(num) {
 }
 
 function updateShuttleTime() {
-    hideOverlay();
+    hideEditOverlay();
     document.getElementById("shuttleStart" + driverNum).innerHTML = document.getElementById("updateShuttleStart").value;
     document.getElementById("shuttleEnd" + driverNum).innerHTML = document.getElementById("updateShuttleEnd").value;
     updateShuttleTimeDatabase(driverNum, document.getElementById("updateShuttleStart").value, document.getElementById("updateShuttleEnd").value);
@@ -219,7 +225,7 @@ function changeEquipment(num){
 }
 
 function updateEquipment(){
-    hideOverlay();
+    hideEditOverlay();
     document.getElementById("empEquipment" + driverNum).innerHTML = document.getElementById("updateEquipment").value;
     updateEquipmentDatabase(driverNum, document.getElementById("updateEquipment").value);
 }

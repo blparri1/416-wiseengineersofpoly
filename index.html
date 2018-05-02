@@ -218,15 +218,15 @@
                   </tr>
                   <tr>
                       <td>Username:</td>
-                      <td><input type="text" id="newUsername"></td>
+                      <td><input type="text" id="newUsername" size="35" align="center"></td>
                   </tr>
                   <tr>
                       <td>Email:</td>
-                      <td><input type="text" id="newEmail"></td>
+                      <td><input type="text" id="newEmail" size="35" align="center"></td>
                   </tr>
                   <tr>
                       <td>Password:</td>
-                      <td><input type="password" id="newPassword"></td>
+                      <td><input type="password" id="newPassword" size="35" align="center"></td>
                   </tr>
                   <tr>
                       <td colspan="2" align="center">
@@ -236,24 +236,24 @@
                   </tr>
               </table>
           </div>
-        <div id="changeDriverOverlay" class="overlay" hidden="true">
+        <div id="changeDriverOverlay" class="editOverlay" hidden="true">
             <table class="overlay">
                 <tr>
                     <td colspan="2">
                         <h2>Change Driver</h2>
                     </td>
                 </tr>
-                    <td colspan="2"><input type="text" id="newDriver"></td>
+                    <td colspan="2"><input type="text" id="newDriver" size="35" align="center"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
                         <input type="button" value="Submit" onclick="updateDriver()">
-                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                        <input type="button" value="Cancel" onclick="hideEditOverlay()">
                     </td>
                 </tr>
             </table>
         </div>
-        <div id="changeShuttleTimeOverlay" class="overlay" hidden="true">
+        <div id="changeShuttleTimeOverlay" class="editOverlay" hidden="true">
             <table class="overlay">
                 <tr>
                     <td colspan="2">
@@ -264,23 +264,23 @@
                     <td>Start Time</td>
                 </tr>
                 <tr>
-                <td colspan="2"><input type="text" id="updateShuttleStart"></td>
+                <td colspan="2"><input type="text" id="updateShuttleStart" size="35" align="center"></td>
                 </tr>
                 <tr>
                     <td>End Time</td>
                 </tr>
                 <tr>
-                <td colspan="2"><input type="text" id="updateShuttleEnd"></td>
+                <td colspan="2"><input type="text" id="updateShuttleEnd" size="35" align="center"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
                         <input type="button" value="Submit" onclick="updateShuttleTime()">
-                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                        <input type="button" value="Cancel" onclick="hideEditOverlay()">
                     </td>
                 </tr>
             </table>
         </div>
-        <div id="changeEquipmentOverlay" class="overlay" hidden="true">
+        <div id="changeEquipmentOverlay" class="editOverlay" hidden="true">
             <table class="overlay">
                 <tr>
                     <td colspan="2">
@@ -288,12 +288,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="text" id="updateEquipment"></td>
+                    <td colspan="2"><input type="text" id="updateEquipment" size="35" align="center"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
                         <input type="button" value="Submit" onclick="updateEquipment()">
-                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                        <input type="button" value="Cancel" onclick="hideEditOverlay()">
                     </td>
                 </tr>
             </table>
