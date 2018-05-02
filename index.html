@@ -788,7 +788,6 @@
                     </div>
                 </div>
 
-
                 <!-- Chris -->
                 <div class="tab-pane fade" id="catering" role="tabpanel" aria-labelledby="catering-tab">
                         <div class="card col-lg-12">
@@ -821,47 +820,39 @@
 
 
 			<div class="container row">				
-<form action="/action_page.php">
-	&nbsp;&nbsp;&nbsp;&nbsp;Number of guests: &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="number" name="quantity" min="1" max="50">
-  <input type="submit">
-</form>
-							
-			 </div>				
-							
-<div class="container row">
-<div>					 
-<form action="/action_page.php">
-</br>	
-  &nbsp;&nbsp;&nbsp;&nbsp;Select a time:
-  <input type="time" name="usr_time">
-  <input type="submit">
-</form>
-							
-                        </div>
-						 </div>
-							
-							
-							
+				<form action="/action_page.php">
+					&nbsp;&nbsp;&nbsp;&nbsp;Number of guests: &nbsp;&nbsp;&nbsp;
+					<input type="number" name="quantity" min="1" max="50">
+					<input type="submit">
+				</form>			
+			 </div>								
+			<div class="container row">
+			<div>					 
+				<form action="/action_page.php">
+					</br>	
+						&nbsp;&nbsp;&nbsp;&nbsp;Select a time:
+				<input type="time" name="usr_time">
+				&nbsp;
+				<input type="submit">
+				</form>
+            </div>
+			</div>
                                 <!--ADD YOUR FORM ELEMENTS HERE -->
 						<div><hr/></div><!--Divider line -->
                         <div>
                             <label class="col-lg-8 lead" ><mark><strong> Select all food categories you would like to reserve:</strong></mark></label>
                         </div>
-						
-						
-						
                         <div class="container row">
-                            <div class="col-lg-3 checkboxTable">
-								 <label class="leadl" ><input type="checkbox" onclick="showHideItalian()" id="b4"> Italian </label>
+                            <div class="col-lg-2 checkboxTable">
+								 <label class="lead" ><input type="checkbox" onclick="showHideItalian()" id="b4"> Italian </label>
                             </div>
-                            <div class="col-lg-3 checkboxChair">
-                                <label class="leadl"><input type="checkbox" onclick="showHideChinese()" id="b3"> Chinese </label>
+                            <div class="col-lg-2 checkboxChair">
+                                <label class="lead"><input type="checkbox" onclick="showHideChinese()" id="b3"> Chinese </label>
                             </div>
-                            <div class="col-lg-3 checkboxChair">
+                            <div class="col-lg-2 checkboxChair">
                                 <label class="lead"><input type="checkbox" onclick="showHideAmerican()" id="b2"> American </label>
                             </div>
-                             <div class="col-lg-3 checkboxChair">
+                             <div class="col-lg-2 checkboxChair">
                                 <label class="lead"><input type="checkbox" onclick="showHideDrinks()" id="b2"> Drinks </label>
                             </div>
                         </div>
@@ -873,21 +864,21 @@
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$5.95</label>
+                                        <label class="row" type="text" name="row" value="row">$5.95</label>
                                     </span>
                                 </div>
 								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Italian entreés</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$13.95</label>
+                                        <label class="row" type="text" name="row" value="row">$13.95</label>
                                     </span>
                                 </div>
 								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Italian deserts</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$1.95</label>
+                                        <label class="row" type="text" name="row" value="row">$1.95</label>
                                     </span>
                                 </div>
                                     </span>
@@ -897,24 +888,24 @@
 							<div class="container row">
                             <div class="container row" id="Chinese">
                                 <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese appetizers</u></label>
-                                <div class="col-lg-8 input-group input-group-sm" >
+                                <div class="col-lg-10 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$2.95</label>
+                                        <label class="row" type="text" name="row" value="row">$2.95</label>
                                     </span>
                                 </div>
 								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese entreés</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$11.95</label>
+                                        <label class="row" type="text" name="row" value="row">$11.95</label>
                                     </span>
                                 </div>
 								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese deserts</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$4.95</label>
+                                        <label class="row" type="text" name="row" value="row">$4.95</label>
                                     </span>
                                 </div>
                                     </span>
@@ -923,62 +914,57 @@
 							
 							<div class="container row">
                             <div class="container row" id="American">
-                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American appetizers</u></label>
+                                <label name="row row" class="lead control-label col-lg-8"><br><u>Select number of American appetizers</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$4.95</label>
+                                        <label class="row" type="text" name="row" value="row">$4.95</label>
                                     </span>
                                 </div>
-								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American entreés</u></label>
+								   <label name="row row" class="lead control-label col-lg-8"><br><u>Select number of American entreés</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$10.95</label>
+                                        <label class="row" type="text" name="row" value="row">$10.95</label>
                                     </span>
                                 </div>
-								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American deserts</u></label>
+								   <label name="row row" class="lead control-label col-lg-8"><br><u>Select number of American deserts</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$3.95</label>
+                                        <label class="row" type="text" name="row" value="row">$3.95</label>
                                     </span>
                                 </div>
                                     </span>
                                 </div>
                             </div>
-							
-
-							
 							
 							<div class="container row">
                             <div class="container row" id="Drinks">
-                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of waters</u></label>
+                                <label name="row" class="lead control-label col-lg-8"><br><u>Select number of waters</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$13.99</label>
+                                        <label class="row" type="text" name="row" value="row">$13.99</label>
                                     </span>
                                 </div>
-								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of beers</u></label>
+								   <label name="row" class="lead control-label col-lg-8"><br><u>Select number of beers</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$2.95</label>
+                                        <label class="row" type="text" name="row" value="row">$2.95</label>
                                     </span>
                                 </div>
-								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of sodas</u></label>
+								   <label name="row" class="lead control-label col-lg-8"><br><u>Select number of sodas</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$1.99</label>
+                                        <label class="row" type="text" name="row" value="row">$1.99</label>
                                     </span>
                                 </div>
                                     </span>
                                 </div>
                             </div>
-							
-							
 							
 							</br>
                             <div class="container row">
@@ -991,8 +977,6 @@
                             </form>
                         </div>
                     </div>
-
-
 <script>
 function showHideAmerican() {
     var x = document.getElementById("American");
@@ -1174,24 +1158,18 @@ showHideDrinks();
                             <div class="col-lg-2 checkboxChair">
                                 <label class="lead checkboxLabel"><input type="checkbox" onclick="showHideBus()" id="b1"> Bus - 40 seats </label>
                             </div>
-							
                         </div>
-							
                         </div>
-
 						<div>
                             <label class="col-lg-8 lead" ><strong> Enter in the destination:</strong></mark></label>
-							
                         </div>
-						
 						 <div class="container row">
 						 <div>
                             <label class="col-lg-8 lead" ><strong> <form action="/action_page.php">
-							
 							<input type="text" name="firstname" value="Best Community Service"></strong></mark></label>
-							
                         </div>
 						 </div>
+						 
 						         <!-- Text for drop down goes here-->
 						     <div class="container row">
                             <div class="container row" id="van8">
@@ -1199,7 +1177,7 @@ showHideDrinks();
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$49.99 + 45 cents per mile</label>
+                                        <label class="row" type="text" name="row" value="row">$49.99 + 45 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
@@ -1211,33 +1189,31 @@ showHideDrinks();
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$59.99 + 50 cents per mile</label>
+                                        <label class="row" type="text" name="row" value="row">$59.99 + 50 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
 							</div>
 
-							
 							<div class="container row">
                             <div class="container row" id="car">
                                 <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of cars:</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$25.00 + 20 cents per mile</label>
+                                        <label class="row" type="text" name="row" value="row">$25.00 + 20 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
 							</div>
 
-							
 							<div class="container row">
                             <div class="container row" id="bus">
                                 <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of busses:</u></label>
                                 <div class="col-lg-8 input-group input-group-sm" >
                                     <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
                                     <span>
-                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$100.00 + 70 cents per mile</label>
+                                        <label class="row" type="text" name="row" value="row">$100.00 + 70 cents per mile</label>
                                     </span>
                                 </div>
                             </div>
@@ -1253,15 +1229,12 @@ showHideDrinks();
                                 <button class="add btn btn-primary">Add to cart</button>
                                 <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
                                  >Add To Cart</button> -->
-                            </div>
-							
+                            </div>	
                         </div>
-
                     </div> 
                         <div class="container row">
                         </div>
                 </div>
-
 <script>
 function showHideVan8() {
     var x = document.getElementById("van8");
