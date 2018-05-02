@@ -824,31 +824,139 @@
                         <div>
                             <label class="col-lg-8 lead" ><mark><strong> Select all food categories you would like to reserve:</strong></mark></label>
                         </div>
+						
+						
+						
                         <div class="container row">
-                            <div class="col-lg-2 checkboxTable">
-								<form>
-								Chinese:
-								<input type="number" name="quantity" min="1" max="50">
-								</form>
+                            <div class="col-lg-3 checkboxTable">
+								 <label class="leadl" ><input type="checkbox" onclick="showHideItalian()" id="b4"> Italian </label>
                             </div>
-                            <div class="col-lg-2 checkboxChair">
-								<form>
-								Mexican:
-								<input type="number" name="quantity" min="1" max="50">
-								</form>
+                            <div class="col-lg-3 checkboxChair">
+                                <label class="leadl"><input type="checkbox" onclick="showHideChinese()" id="b3"> Chinese </label>
                             </div>
-                            <div class="col-lg-2 checkboxChair">
-								<form>
-								Italian:
-								<input type="number" name="quantity" min="1" max="50">
-								</form>
+                            <div class="col-lg-3 checkboxChair">
+                                <label class="lead"><input type="checkbox" onclick="showHideAmerican()" id="b2"> American </label>
                             </div>
-                            <div class="col-lg-2 checkboxChair">
+                             <div class="col-lg-3 checkboxChair">
+                                <label class="lead"><input type="checkbox" onclick="showHideDrinks()" id="b2"> Drinks </label>
                             </div>
                         </div>
-
                             </div>
+							
+							<div class="container row">
+                            <div class="container row" id="Italian">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Italian appetizers</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$5.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Italian entreés</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$13.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Italian deserts</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$1.95</label>
+                                    </span>
+                                </div>
+                                    </span>
+                                </div>
+                            </div>
+							
+							<div class="container row">
+                            <div class="container row" id="Chinese">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese appetizers</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$2.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese entreés</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$11.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of Chinese deserts</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$4.95</label>
+                                    </span>
+                                </div>
+                                    </span>
+                                </div>
+                            </div>
+							
+							<div class="container row">
+                            <div class="container row" id="American">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American appetizers</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$4.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American entreés</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$10.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of American deserts</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$3.95</label>
+                                    </span>
+                                </div>
+                                    </span>
+                                </div>
+                            </div>
+							
 
+							
+							
+							<div class="container row">
+                            <div class="container row" id="Drinks">
+                                <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of waters</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$13.99</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of beers</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$2.95</label>
+                                    </span>
+                                </div>
+								   <label name="tableSize row" class="lead control-label col-lg-8"><br><u>Select number of sodas</u></label>
+                                <div class="col-lg-8 input-group input-group-sm" >
+                                    <input type="text" class="col-lg-4 form-control" placeholder="Enter Quantity">
+                                    <span>
+                                        <label class="priceTableCls" type="text" name="tablePrize" value="price3ft">$1.99</label>
+                                    </span>
+                                </div>
+                                    </span>
+                                </div>
+                            </div>
+							
+							
+							
+							</br>
                             <div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
                                     <button class="add btn btn-primary">Add to cart</button>
@@ -861,6 +969,49 @@
                     </div>
 
 
+<script>
+function showHideAmerican() {
+    var x = document.getElementById("American");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showHideItalian() {
+    var x = document.getElementById("Italian");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showHideChinese() {
+    var x = document.getElementById("Chinese");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showHideDrinks() {
+    var x = document.getElementById("Drinks");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+showHideItalian();
+showHideChinese();
+showHideAmerican();
+showHideDrinks();
+</script>
+					
 
                 <!-- Ali -->
                 <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="donations-tab">
@@ -1029,7 +1180,6 @@
                                 </div>
                             </div>
 							</div>
-							</br>
 							
 							<div class="container row">
                             <div class="container row" id="van12">
@@ -1042,7 +1192,7 @@
                                 </div>
                             </div>
 							</div>
-							</br>
+
 							
 							<div class="container row">
                             <div class="container row" id="car">
@@ -1055,7 +1205,7 @@
                                 </div>
                             </div>
 							</div>
-							</br>
+
 							
 							<div class="container row">
                             <div class="container row" id="bus">
@@ -1068,15 +1218,13 @@
                                 </div>
                             </div>
 							</div>
-							</br>
-							
-							<div class="container row">
-							<div class="col-lg-8 checkboxTable">
+							</div>
+														
+                        </form>
+                        <div class="container col">
+													<div class="col-lg-8 checkboxTable">
                                 <label class="lead checkboxLabel" ><input type="checkbox"  id="b4"> I have reviewed my choice of vehicles and agree to BCS terms of service. </label>
                             </div>
-							</div>
-                        </form>
-                        <div class="container row">
                             <div class="col-lg-4 col-lg-offset-2 form-group">
                                 <button class="add btn btn-primary">Add to cart</button>
                                 <!-- <button class="btn btn-primary " name="submit" type="submit" onClick="addToCart()"
