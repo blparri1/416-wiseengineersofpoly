@@ -125,6 +125,7 @@ function checkout() {
 }
 
 function checkLogin() {
+    document.getElementById("loginError").innerHTML = "";
     if (databaseLogin(document.getElementById('username').value, document.getElementById('password').value)) {
       loggedin = true;
       if (getStatus(databaseLogin(document.getElementById('username').value) == 'emp')) {
@@ -155,9 +156,13 @@ function loggingOut(){
 }
 
 function registerNewUser() {
-    document.getElementById("registerOverlay").hidden = true;
-    addUserToDatabase(document.getElementById('newUsername').value, document.getElementById('newEmail').value, document.getElementById('newPassword').value);
-
+    document.getElementById("registerError").innerText = "";
+    var taken = addUserToDatabase(document.getElementById('newUsername').value, document.getElementById('newEmail').value, document.getElementById('newPassword').value);
+    if (taken) {
+        document.getElementById("registerError").innerHTML = "<font color=\"red\">Username and/or email taken</font>";
+    } else {
+        hideOverlay();
+    }
 }
 
 //Employee Dashboard******************************
@@ -531,6 +536,9 @@ function volEvent(event) {
 }
 
 function addUserToDatabase(name, email, pass) {
-    //do Nothing - Stub
+    if (email == "baldguy@asu.edu" || name == "baldguy") {
+        return true;
+    }
+    return false;
 }
 
