@@ -462,7 +462,7 @@
 				</tr>
 				<tr>
 					<td align="center">
-						<input type="button" value="Submit" onclick="submitPayment()">
+						<input type="button" value="Submit" onclick="confirmPayment()">
 					</td>
 					<td align="center">
 						<input type="button" value="Cancel" onclick="hideOverlay()">
@@ -470,6 +470,23 @@
 				</tr>
 			</table>
 		</div>
+        <div id="checkoutFinal" class="overlay" hidden="true">
+            <table class="overlay">
+                <tr>
+                    <td>Confirm Purchase</td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td id="totalCost"></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="button" value="Submit" onclick="confirmPurcase()">
+                        <input type="button" value="Cancel" onclick="hideOverlay()">
+                    </td>
+                </tr>
+            </table>
+        </div>
           
           <div class="jumbotron jumbotron-fluid jumbotron-billboard" style="" >
               <div class="img"></div>
@@ -1158,8 +1175,8 @@ showHideDrinks();
 							
 							<div class="container row">
                                 <div class="col-lg-4 col-lg-offset-2 form-group">
-                                    <button class="btn btn-primary " name="checkout" onClick="checkout()"
-                                    >Checkout</button>
+                                    <button class="btn btn-primary " hidden="true" id="checkoutButton" onClick="checkout()">Checkout</button>
+                                    <button class="btn btn-primary " id="checkoutLogin" onClick="showLogin()">Login</button>
                                 </div>
                             </div>
 

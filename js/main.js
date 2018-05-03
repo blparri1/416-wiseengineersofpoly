@@ -86,6 +86,9 @@ function hideOverlay(){
     document.getElementById("changeShuttleTimeOverlay").hidden = true;
     document.getElementById("changeEquipmentOverlay").hidden = true;
     document.getElementById("dashboardOverlay").hidden = true;
+    document.getElementById("checkoutOverlay").hidden = true;
+    document.getElementById("checkoutFinal").hidden = true;
+
 }
 
 function hideEditOverlay(){
@@ -139,6 +142,8 @@ function checkLogin() {
           user = true;
       }
       username = document.getElementById('username').value;
+      document.getElementById("checkoutButton").hidden = false;
+      document.getElementById("checkoutLogin").hidden = true;
       loginMenu();
       hideOverlay();
     } else {
@@ -151,7 +156,6 @@ function loggingOut(){
     volunteer = false;
     user = false;
     loggedin = false;
-    document.getElementById("landing").show;
     location.reload();
 }
 
@@ -306,6 +310,21 @@ function pullUserDonations(user) {
     }
     returnData = returnData + "</table>";
     document.getElementById("userDonations").innerHTML = returnData;
+}
+
+function confirmPayment(){
+    document.getElementById("totalCost").innerHTML = getTotalCost(username);
+    document.getElementById("checkoutOverlay").hidden = true;
+    document.getElementById("checkoutFinal").hidden = false;
+}
+
+function confirmPurcase(){
+    var success = processPayment(username, document.getElementById("cardNumber").value, document.getElementById("cardCode").value, document.getElementById("cardDate".value));
+    if (success) {
+        document.getElementById("checkoutFinal").hidden = true;
+    } else {
+        //will always pass for now
+    }
 }
 
 
@@ -542,3 +561,10 @@ function addUserToDatabase(name, email, pass) {
     return false;
 }
 
+function processPayment(name, CC, code, exp){
+    return true;
+}
+
+function getTotalCost(user){
+    return "$199.98";
+}
