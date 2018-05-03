@@ -175,6 +175,7 @@ div.dashOverlay{
     z-index: 9; /* Specify a stack order in case you're using a different order for other elements */
 }
 
+
 tr.mainBackground {
     height: 100%;
     background: url("images/mainBackground.jpg") no-repeat;
@@ -218,6 +219,10 @@ div.editOverlay{
     background-color: rgba(255,255,255,0.5); /* Black background with opacity */
     z-index: 15; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+}
+
+.ng-controller {
+    background: url("assets/cooleyBallroom.jpg") no-repeat;
 }
 
 .bg-company-red {
