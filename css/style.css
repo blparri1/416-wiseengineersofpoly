@@ -7,7 +7,12 @@ html, body, #page {
     font-family: "Roboto";
 
 }
-
+.bottomText {
+    min-width: 120px;
+}
+.bottomText2 {
+    min-width: 160px;
+}
 .control-label, .checkboxLabel
 {
     font-family: "Roboto";

@@ -1122,7 +1122,7 @@ showHideDrinks();
                         </form>
                             <div class="container row">
                                 <div class="col-lg-offset-2 form-group">
-                                    <button class="add btn btn-primary">Add to cart</button>
+                                    <a href="#" class="add btn btn-primary" >Add to cart</a>
                                     <br><br>
                                 </div>
                             </div>
@@ -1378,9 +1378,11 @@ showHideVan12()
         </div>
 
     <div id="bottomBar">
-        <label >
-
-        </label>
+        <label  class="bottomText text-primary ">About BCS</label>
+        <label  class="bottomText text-primary "> Contact Us </label>
+        <label  class="bottomText2 text-primary "> Privacy Statement </label>
+        <label  class="bottomText2 text-primary ">Accessibility Information</label>
+        <label  class=" text-primary float-right" > © 2000-2018 Best Community Service, Inc. All rights reserved .</label>
     </div>
 </body>
 
@@ -1476,6 +1478,7 @@ showHideVan12()
     $('.add').click(function (){
         lblCartCount ++;
         $('#lblCartCount').html(lblCartCount).css('display', 'block');
+        //$('#myTab a[href="#"]').tab('show');
 
     });
 
